@@ -2,8 +2,10 @@ from ideograph import functors
 import idsparser
 import operator
 import threading
+import multiprocessing as mp
+import time
 
-class TreeCompare():
+class TreeCompare:
 
     def __init__(self):
         self.weights = {
@@ -24,6 +26,12 @@ class TreeCompare():
 
         self.node_comparisons = {}
         self.char_comparisons = {}
+
+    def start_manager(self):
+        self.manager = mp.Manager()
+        #self.manager.start()
+        self.node_comparisons = self.manager.dict()
+        self.char_comparisons = self.manager.dict()
 
     def compare_nodes(self, a, b):
         if frozenset([a.ids,b.ids]) in self.node_comparisons:
@@ -67,6 +75,7 @@ class TreeCompare():
                 raise ValueError('Attempt to set a character comparison score different from already-existing score')
             else:
                 return False
+
 class IDSDict():
 
     def __init__(self):
@@ -85,36 +94,54 @@ class IDSDict():
     def _compare_nodes(self, chunks=1):
         keys = sorted(list(self._nodes.keys()))
         if chunks <= 1:
-            self._compare_nodes_thread(keys)
+            self._compare_nodes_process(keys)
         else:
-            threads = []
-            per_thread = int(len(keys) / chunks)
+            self.comparer.start_manager()
+            processes = []
+            per_process = int(len(keys) / chunks)
             for i in range(chunks):
                 for j in range(i, chunks):
-                    a_beg = i*per_thread
-                    b_beg = j*per_thread
+                    a_beg = i*per_process
+                    b_beg = j*per_process
                     if i == chunks - 1:
                         a_end = len(keys)
                     else:
-                        a_end = (i+1)*per_thread
+                        a_end = (i+1)*per_process
                     if j == chunks - 1:
                         b_end = len(keys)
                     else:
-                        b_end = (j+1)*per_thread
-                    thread = threading.Thread(target=self._compare_nodes_thread, name='Node comparison: {}-{} to {}-{}'.format(a_beg, a_end, b_beg, b_end), args=[keys, a_beg, a_end, b_beg, b_end])
-                    thread.start()
-                    print('Thread started: {}'.format(thread.name))
-                    threads.append(thread)
+                        b_end = (j+1)*per_process
+                    process = mp.Process(target=self._compare_nodes_process, name='Node comparison: {}-{} to {}-{}'.format(a_beg, a_end, b_beg, b_end), args=(keys, a_beg, a_end, b_beg, b_end))
+                    processes.append(process)
+
+            cpu_count = mp.cpu_count()
+            for i in range(len(processes)):
+                processes[i].start()
+                print('{} started'.format(processes[i].name))
+                children = mp.active_children()
+                if len(children) >= (cpu_count * 3):
+                    child = next((x for x in children if type(x) == mp.Process), None)
+                    if child:
+                        child.join()
+                        print('{} finished'.format(child.name))
+
+            child = next((x for x in mp.active_children() if type(x) == mp.Process), None)
+            while not child == None:
+                child.join()
+                print('{} finished'.format(child.name))
+                child = next((x for x in mp.active_children() if type(x) == mp.Process), None)
+
+            print('Node processing done')
 
             #print('Number of threads: {}'.format(threading.active_count()))
-            for thread in threads:
+            #for thread in threads:
                 #print('Number of threads: {}'.format(threading.active_count()))
-                thread.join()
-                print('Node thread "{}" finished'.format(thread.name))
+                #thread.join()
+                #print('Node thread "{}" finished'.format(thread.name))
             #print('Number of threads running: {}'.format(threading.active_count()))
             #print('Exiting')
 
-    def _compare_nodes_thread(self, keys, a_beg=0, a_end=-1, b_beg=0, b_end=-1):
+    def _compare_nodes_process(self, keys, a_beg=0, a_end=-1, b_beg=0, b_end=-1):
         if a_end == -1:
             a_end = len(keys)
         if b_end == -1:
@@ -129,7 +156,11 @@ class IDSDict():
             self._compare_nodes(1)
             self._compare_characters_thread(keys)
         else:
+            t1 = time.perf_counter()
             self._compare_nodes(chunks)
+            t2 = time.perf_counter()
+            print('Process time: {}s'.format((t2-t1)))
+            return
             threads = []
             per_thread = int(len(keys) / chunks)
             for i in range(chunks):
@@ -175,7 +206,7 @@ class IDSDict():
         if rev:
             sorted_comps = reversed(sorted_comps)
 
-        sorted_comps = sorted_comps[(len(sorted_comps)-int(len(sorted_comps)/5)):]
+        #sorted_comps = sorted_comps[(len(sorted_comps)-int(len(sorted_comps)/5)):]
         for comp in sorted_comps:
             if len(comp[0]) > 1:
                 print('{}\t{} | {}'.format(list(comp[0])[0], list(comp[0])[1], comp[1]))
@@ -191,6 +222,7 @@ class IDSTree():
         self.tree = IDSNode(parse_tree[1], dictionary=self._dictionary)
         if self._dictionary:
             self._dictionary._nodes[self.head] = self.tree
+            self._dictionary._nodes[self.ids] = self.tree
 
     def get_depth(self):
         return self.tree.get_depth()

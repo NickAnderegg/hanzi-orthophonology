@@ -14,9 +14,9 @@ with infile.open(mode='r', encoding='utf-8', newline='') as csvfile:
         count += 1
         dic.add_ids(row[1], row[2])
 
-        if count > 5000:
+        if count > 500:
             break
 
 print(str(len(dic.charlist)))
-dic.compare_characters(15)
-dic.print_char_comparisons(rev=False)
+dic.compare_characters(10)
+#dic.print_char_comparisons(rev=False)
