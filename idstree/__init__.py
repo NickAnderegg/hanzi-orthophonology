@@ -4,6 +4,7 @@ import operator
 import threading
 import multiprocessing as mp
 import time
+from collections import deque
 
 class TreeCompare:
 
@@ -92,15 +93,17 @@ class IDSDict():
             return self.charlist[char]
 
     def _compare_nodes(self, chunks=1):
+        #keys = [x[0] for x in sorted([list(x) for x in list(self._nodes.items())], key=lambda node: node[1].get_depth())]
         keys = sorted(list(self._nodes.keys()))
+        #print([x.get_depth() for x in sorted([list(x)[1] for x in list(self._nodes.items())], key=operator.methodcaller('get_depth'))])
         if chunks <= 1:
             self._compare_nodes_process(keys)
         else:
-            self.comparer.start_manager()
-            processes = []
+            #self.comparer.start_manager()
+            processes = deque()
             per_process = int(len(keys) / chunks)
             for i in range(chunks):
-                for j in range(i, chunks):
+                for j in range(i+1):
                     a_beg = i*per_process
                     b_beg = j*per_process
                     if i == chunks - 1:
@@ -111,27 +114,42 @@ class IDSDict():
                         b_end = len(keys)
                     else:
                         b_end = (j+1)*per_process
-                    process = mp.Process(target=self._compare_nodes_process, name='Node comparison: {}-{} to {}-{}'.format(a_beg, a_end, b_beg, b_end), args=(keys, a_beg, a_end, b_beg, b_end))
+                    process = threading.Thread(target=self._compare_nodes_process, name='Node comparison: {}-{} to {}-{}'.format(a_beg, a_end, b_beg, b_end), args=[keys, a_beg, a_end, b_beg, b_end])
                     processes.append(process)
+                    if threading.active_count() < (chunks * 2):
+                        process = processes.popleft()
+                        process.start()
+                        print('{} started'.format(process.name))
 
-            cpu_count = mp.cpu_count()
-            for i in range(len(processes)):
-                processes[i].start()
-                print('{} started'.format(processes[i].name))
-                children = mp.active_children()
-                if len(children) >= (cpu_count * 3):
-                    child = next((x for x in children if type(x) == mp.Process), None)
-                    if child:
-                        child.join()
-                        print('{} finished'.format(child.name))
+            while len(processes) > 0:
+                if threading.active_count() < chunks:
+                    process = processes.popleft()
+                    process.start()
+                    print('{} started'.format(process.name))
+                else:
+                    time.sleep(0.25)
 
-            child = next((x for x in mp.active_children() if type(x) == mp.Process), None)
-            while not child == None:
-                child.join()
-                print('{} finished'.format(child.name))
-                child = next((x for x in mp.active_children() if type(x) == mp.Process), None)
+            while next((x for x in threading.enumerate() if x != threading.current_thread()), False):
+                time.sleep(0.5)
 
-            print('Node processing done')
+            # cpu_count = mp.cpu_count()
+            # for i in range(len(processes)):
+            #     processes[i].start()
+            #     print('{} started'.format(processes[i].name))
+            #     children = mp.active_children()
+            #     if len(children) >= (cpu_count * 3):
+            #         child = next((x for x in children if type(x) == mp.Process), None)
+            #         if child:
+            #             child.join()
+            #             print('{} finished'.format(child.name))
+            #
+            # child = next((x for x in mp.active_children() if type(x) == mp.Process), None)
+            # while not child == None:
+            #     child.join()
+            #     print('{} finished'.format(child.name))
+            #     child = next((x for x in mp.active_children() if type(x) == mp.Process), None)
+            #
+            # print('Node processing done')
 
             #print('Number of threads: {}'.format(threading.active_count()))
             #for thread in threads:
@@ -160,7 +178,6 @@ class IDSDict():
             self._compare_nodes(chunks)
             t2 = time.perf_counter()
             print('Process time: {}s'.format((t2-t1)))
-            return
             threads = []
             per_thread = int(len(keys) / chunks)
             for i in range(chunks):
@@ -201,12 +218,9 @@ class IDSDict():
 
     def print_char_comparisons(self, rev=True):
         comparisons = self.comparer.char_comparisons.items()
-        sorted_comps = sorted(comparisons, key=operator.itemgetter(1), reverse=rev)
+        sorted_comps = [x for x in sorted(comparisons, key=operator.itemgetter(1), reverse=rev) if x[1] > 0]
 
-        if rev:
-            sorted_comps = reversed(sorted_comps)
-
-        #sorted_comps = sorted_comps[(len(sorted_comps)-int(len(sorted_comps)/5)):]
+        sorted_comps = sorted_comps[(len(sorted_comps)-int(len(sorted_comps)/10)):]
         for comp in sorted_comps:
             if len(comp[0]) > 1:
                 print('{}\t{} | {}'.format(list(comp[0])[0], list(comp[0])[1], comp[1]))
