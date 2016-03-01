@@ -60,3 +60,10 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+generatetrees.py
+ideograph/
+ids/
+oldidstree/
+pyparserexp.py
+test.txt
+validchars.txt
