@@ -5,6 +5,7 @@ import threading
 import multiprocessing as mp
 import time
 from collections import deque
+import handata
 
 class TreeCompare:
 
@@ -28,22 +29,48 @@ class TreeCompare:
         self.node_comparisons = {}
         self.char_comparisons = {}
 
-    def start_manager(self):
-        self.manager = mp.Manager()
-        #self.manager.start()
-        self.node_comparisons = self.manager.dict()
-        self.char_comparisons = self.manager.dict()
+    # def start_manager(self):
+    #     self.manager = mp.Manager()
+    #     #self.manager.start()
+    #     self.node_comparisons = self.manager.dict()
+    #     self.char_comparisons = self.manager.dict()
 
     def compare_nodes(self, a, b):
+        """Compare two IDSNodes and return their similarity value"""
+
         if frozenset([a.ids,b.ids]) in self.node_comparisons:
+            """If the nodes have already been compared, return the comparison"""
             return self.node_comparisons[frozenset([a.ids,b.ids])]
+
         if a is b:
+            """If the nodes point to the same node object, return 1"""
             self._add_node_comparison(a.ids, b.ids, 1)
             return 1
         elif a.head != b.head:
-            self._add_node_comparison(a.ids, b.ids, 0)
-            return 0
+            """
+            If the heads are different...
+                - Catches IDS sequences beginning with different functors
+                - Catches two different individual Characters
+                - Catches the comparison of an IDS tree to an individual character
+            """
+
+            # TODO: Incorporate the stroke-count algorithm into type-mismatches
+            if a.head in functors.all or b.head in functors.all:
+                """
+                Elimination of (for now) uncomparable node types:
+                    - Two trees with different functors
+                    - A tree and an individual character
+                """
+                self._add_node_comparison(a.ids, b.ids, 0)
+                return 0
+            else:
+                """Compare two individual characters/base components"""
+                similarity = self._compare_base_components(a.head, b.head)
+                self._add_node_comparison(a.ids, b.ids, similarity)
+                return similarity
         else:
+            """Compare two IDSNode trees with the same functor"""
+
             total = 0
             if a.children and b.children:
                 for i in range(len(a.children)):
@@ -54,6 +81,29 @@ class TreeCompare:
 
             self._add_node_comparison(a.ids, b.ids, total)
             return total
+
+    def _compare_base_components(self, a, b):
+        if a not in handata.unihan or b not in handata.unihan:
+            return 0
+        elif 'rs_kangxi' in handata.unihan[a] and 'rs_kangxi' in handata.unihan[b]:
+            rs_a = [int(x) for x in handata.unihan[a]['rs_kangxi'].split('.')]
+            rs_b = [int(x) for x in handata.unihan[b]['rs_kangxi'].split('.')]
+
+            radical_a = handata.radicals[rs_a[0]]
+            radical_b = handata.radicals[rs_b[0]]
+
+            if rs_a[0] == rs_b[0]:
+                return 0.25 + 0.125*(min(rs_a[1], rs_b[1])/max(rs_a[1], rs_b[1], 1))
+            elif 'total_strokes' in handata.unihan[radical_a] and 'total_strokes' in handata.unihan[radical_b]:
+                a_strokes = int(handata.unihan[radical_a]['total_strokes'])
+                b_strokes = int(handata.unihan[radical_b]['total_strokes'])
+
+                radical_prop    = min(a_strokes, b_strokes)/max(a_strokes, b_strokes, 1)
+                additional_prop = min(rs_a[1], rs_b[1]) / max(rs_a[1], rs_b[1], 1)
+
+                return 0.125*radical_prop + 0.125*additional_prop
+        else:
+            return 0
 
     def _add_node_comparison(self, a, b, score):
         comparison = frozenset([a, b])
@@ -201,7 +251,7 @@ class IDSDict():
             for thread in reversed(threads):
                 #print('Number of threads: {}'.format(threading.active_count()))
                 thread.join()
-                print('Char thread "{}" finished'.format(thread.name))
+                print('{} finished'.format(thread.name))
             #print('Number of threads running: {}'.format(threading.active_count()))
             #print('Exiting')
 
@@ -217,10 +267,12 @@ class IDSDict():
                 self.comparer._add_char_comparison(keys[i], keys[j], similarity)
 
     def print_char_comparisons(self, rev=True):
+        print('Printing character comparisons...')
         comparisons = self.comparer.char_comparisons.items()
         sorted_comps = [x for x in sorted(comparisons, key=operator.itemgetter(1), reverse=rev) if x[1] > 0]
-
+        print('Characters sorted...')
         sorted_comps = sorted_comps[(len(sorted_comps)-int(len(sorted_comps)/10)):]
+        print('Dividing sorted comparisons...')
         for comp in sorted_comps:
             if len(comp[0]) > 1:
                 print('{}\t{} | {}'.format(list(comp[0])[0], list(comp[0])[1], comp[1]))
