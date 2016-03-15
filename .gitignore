@@ -60,6 +60,8 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Scaffolding
 generatetrees.py
 ideograph/
 ids/
