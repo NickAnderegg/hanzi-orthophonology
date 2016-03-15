@@ -62,6 +62,7 @@ target/
 .ipynb_checkpoints
 
 # Scaffolding
+utilities/
 generatetrees.py
 ideograph/
 ids/
@@ -69,3 +70,4 @@ oldidstree/
 pyparserexp.py
 test.txt
 validchars.txt
+readcedict.py
