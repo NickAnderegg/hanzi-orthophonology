@@ -23,19 +23,17 @@ infile = Path('./allids.csv')
 with infile.open(mode='r', encoding='utf-8', newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter='\t')
     for row in csvreader:
-        if random.randint(1,20) != 2:
-            continue
+        # if random.randint(1,5) != 2:
+        #     continue
         if row[1] in handata.subtlex['char']:
             dic.add_ids(row[1], row[2])
             subtlexcount += 1
         elif row[1] in handata.hsk['char']:
             dic.add_ids(row[1], row[2])
             hskcount += 1
-        elif row[1] in handata.cedictchars:
-            dic.add_ids(row[1], row[2])
-            cecount += 1
-            if random.randint(1,500) == 10:
-                print('CEDICT Entry: {}\tDefinition: {}'.format(row[1], handata.cedict[row[1]]['definitions']))
+        # elif row[1] in handata.cedictchars:
+        #     dic.add_ids(row[1], row[2])
+        #     cecount += 1
         else:
             skipped += 1
 

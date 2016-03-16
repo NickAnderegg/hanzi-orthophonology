@@ -73,14 +73,44 @@ class TreeCompare:
 
             total = 0
             if a.children and b.children:
+                stroke_proportions = {
+                    'a': [],
+                    'b': []
+                }
+
+                a_strokes = a.get_strokes()
+                b_strokes = b.get_strokes()
                 for i in range(len(a.children)):
+                    stroke_proportions['a'].append(a.children[i].get_strokes() / a_strokes)
+                    stroke_proportions['b'].append(b.children[i].get_strokes() / b_strokes)
+
                     if a.children[i] is b.children[i]:
-                        total += self.weights[a.head][i]
+                        total += self._weighted_similarity(
+                            self.weights[a.head][i],
+                            stroke_proportions['a'][i],
+                            stroke_proportions['b'][i]
+                        )
                     else:
-                        total += (self.compare_nodes(a.children[i], b.children[i]) * self.weights[a.head][i])
+                        weighted_similarity = self._weighted_similarity(
+                            self.weights[a.head][i],
+                            stroke_proportions['a'][i],
+                            stroke_proportions['b'][i]
+                        )
+                        total += (self.compare_nodes(a.children[i], b.children[i]) * weighted_similarity)
+
+                if (max(sum(stroke_proportions['a']), sum(stroke_proportions['b'])) > 1.02 or
+                    min(sum(stroke_proportions['a']), sum(stroke_proportions['b'])) < 0.98):
+                    print(stroke_proportions)
+                    raise ValueError('Stroke proportion calculation failed')
 
             self._add_node_comparison(a.ids, b.ids, total)
             return total
+
+    def _weighted_similarity(self, weight, proportion_a, proportion_b):
+        max_prop = max(proportion_a, proportion_b)
+        min_prop = min(proportion_a, proportion_b)
+
+        return weight * (min_prop / max_prop)
 
     def _compare_base_components(self, a, b):
         if a not in handata.unihan or b not in handata.unihan:
@@ -271,7 +301,7 @@ class IDSDict():
         comparisons = self.comparer.char_comparisons.items()
         sorted_comps = [x for x in sorted(comparisons, key=operator.itemgetter(1), reverse=rev) if x[1] > 0]
         print('Characters sorted...')
-        sorted_comps = sorted_comps[(len(sorted_comps)-int(len(sorted_comps)/10)):]
+        sorted_comps = sorted_comps[(len(sorted_comps)-int(len(sorted_comps)/20)):]
         print('Dividing sorted comparisons...')
         for comp in sorted_comps:
             if len(comp[0]) > 1:
@@ -339,6 +369,18 @@ class IDSNode():
             return 1
         else:
             return max([x.get_depth() for x in self.children]) + 1
+
+    def get_strokes(self):
+        """Calculate the number of strokes in this node tree"""
+        if self.children is None:
+            if self.head not in handata.unihan:
+                return 1
+            elif 'total_strokes' not in handata.unihan[self.head]:
+                return 1
+            else:
+                return int(handata.unihan[self.head]['total_strokes'])
+        else:
+            return sum([x.get_strokes() for x in self.children])
 
     def print_tree(self, depth=-1):
         if depth == -1:
