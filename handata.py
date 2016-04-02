@@ -3,6 +3,11 @@ import csv
 import json
 import re
 import random
+from collections import UserDict
+import math
+import decimal
+from decimal import Decimal
+import statistics
 random.seed()
 
 fields = {
@@ -246,20 +251,185 @@ def load_radicals():
     }
     return radical_dict
 
-unihan = load_unihan()
-# print(len(unihan))
+class _Syllable():
+
+    def __init__(self, pinyin, syllable):
+        self.pinyin = pinyin
+        self.syllable = syllable
+
+    def __getattr__(self, key):
+        if key in self.syllable:
+            return self.syllable[key]
+
+    def __getitem__(self, key):
+        if key in self.syllable:
+            return self.syllable[key]
+        elif key is 'pinyin':
+            return self.pinyin
+
+    def __repr__(self):
+        return str(self.syllable)
+
+    # def count_vowels(self):
+    #     return len([1 for x in self.syllable['nucleus'] if x != [0,0,0]])
+
+class _Syllables():
+
+    def __init__(self, syllables):
+        self.syllables = {key: _Syllable(key, value) for (key, value) in syllables.items()}
+
+    def __getitem__(self, key):
+        if key in self.syllables:
+            return self.syllables[key]
+
+    def __iter__(self):
+        return iter(self.syllables)
+
+    def slot_distance(self, slot, s1, s2):
+        phoneme_slots = {
+            1: 'onset',
+            2: 'glide',
+            3: 'nucleus',
+            4: 'coda',
+            5: 'tone'
+        }
+
+        if type(slot) is int:
+            slot = phoneme_slots[slot]
+
+        phoneme1 = self.syllables[s1][slot]
+        phoneme2 = self.syllables[s2][slot]
+
+        # if phoneme1 == [0.0, 0.0, 0.0] and phoneme2 == [0.0, 0.0, 0.0]:
+        #     return None
+
+        return self._compute_distance(phoneme1, phoneme2)
+
+    # def onset_distance(self, s1, s2):
+    #     onset1 = self.syllables[s1].onset
+    #     onset2 = self.syllables[s2].onset
+    #     return self._compute_distance(onset1, onset2)
+    #
+    # def coda_distance(self, s1, s2):
+    #     coda1 = self.syllables[s1].coda
+    #     coda2 = self.syllables[s2].coda
+    #     return self._compute_distance(coda1, coda2)
+    #
+    # def vowel_distances(self, s1, s2):
+    #     vowels1 = self.syllables[s1].nucleus
+    #     vowels2 = self.syllables[s2].nucleus
+    #     distances = []
+    #     for i in range(3):
+    #         distances.append(self._compute_distance(vowels1[i], vowels2[i]))
+    #
+    #     return distances
+    #
+    # def rime_distances(self, s1, s2):
+    #     rime1 = self.syllables[s1].nucleus + [self.syllables[s1].coda]
+    #     rime2 = self.syllables[s2].nucleus + [self.syllables[s2].coda]
+    #     distances = []
+    #     for i in range(len(rime1)):
+    #         distances.append(self._compute_distance(rime1[i], rime2[i]))
+    #
+    #     return distances
+    #
+    # def nucleus_distance(self, s1, s2):
+    #     vowels1 = self.syllables[s1].nucleus
+    #     vowels2 = self.syllables[s2].nucleus
+    #     nucleus1 = []
+    #     nucleus2 = []
+    #     for i in range(3):
+    #         nucleus1.append(statistics.mean([Decimal(x) for x in vowels1[i]]))
+    #         nucleus2.append(statistics.mean([Decimal(x) for x in vowels2[i]]))
+    #
+    #     return self._compute_distance(nucleus1, nucleus2)
+
+    # def tone_distance(self, s1, s2):
+    #     tone1 = self.syllables[s1].tone
+    #     tone2 = self.syllables[s2].tone
+    #     return self._compute_distance(tone1, tone2)
+
+    def all_distances(self, s1, s2):
+        distances = []
+        for i in range(1,6):
+            distance = self.slot_distance(i, s1, s2)
+            #if distance is not None:
+            distances.append(distance)
+
+        return distances
+        # return ([
+        #     self.slot_distance('onset', s1, s2),
+        #     self.slot_distance('glide', s1, s2),
+        #     self.slot_distance('nucleus', s1, s2),
+        #     self.slot_distance('coda', s1, s2),
+        #     self.slot_distance('tone', s1, s2)
+        # ])
+
+    def syllable_distance(self, s1, s2):
+        decimal.getcontext().prec = 5
+        distances = self.all_distances(s1, s2)
+        distances = [Decimal(x) for x in distances]
+        # for i in range(5):
+        #     # if distances[i] is not None:
+        #     distances[i] = Decimal(distances[i])
+
+        # if distances[0] is None and distances[1] is None:
+        #     return float(statistics.mean(distances[2:]))
+        # elif distances[0] is None:
+        #     onset = distances[1]
+        # elif distances[1] is None:
+        #     onset = distances[0]
+        # else:
+        if self.syllables[s1]['onset'] == '' and self.syllables[s2]['onset'] == '':
+            onset = distances[1]
+        else:
+            onset = distances[0] + (distances[1]/2)
+
+        # onset = statistics.mean(distances[0:1])
+
+        if self.syllables[s1]['coda'] == '' and self.syllables[s2]['coda'] == '':
+            rime = distances[2]
+        # elif self.syllables[s1]['coda'] == '' or self.syllables[s2]['coda'] == '':
+        #     rime = statistics.mean([distances[2], (distances[3]*2)])
+        else:
+            rime = statistics.mean(distances[2:4])
+        return float(statistics.mean([onset, rime, distances[4]]))
+
+    def _compute_distance(self, l1, l2):
+        decimal.getcontext().prec = 5
+        if type(l1) is list:
+            return float((
+                decimal.getcontext().power((Decimal(l2[0]) - Decimal(l1[0])), 2)
+                + decimal.getcontext().power((Decimal(l2[1]) - Decimal(l1[1])), 2)
+                + decimal.getcontext().power((Decimal(l2[2]) - Decimal(l1[2])), 2)
+            ).sqrt())
+        else:
+            return float(decimal.getcontext().abs(Decimal(l1) - Decimal(l2)))
+            # val = float(decimal.getcontext().abs(Decimal(l1) - Decimal(l2)))
+            # print('{}, {} = {}'.format(Decimal(l1), Decimal(l2), val))
+            # return val
+
+def load_syllables():
+    syllables_file = pathlib.Path('data/revsyllables.json')
+    with syllables_file.open('r', encoding='utf-8') as f:
+        return _Syllables(json.load(f))
+
+# unihan = load_unihan()
+# # print(len(unihan))
+# #
+# cedict, cedictchars = load_cedict()
+# # print(len(cedict))
+# # print(len(cedictchars))
 #
-cedict, cedictchars = load_cedict()
-# print(len(cedict))
-# print(len(cedictchars))
+# hsk = load_hsk()
+# # print(len(hsk))
+# # print(len(hsk['word']))
+# # print(len(hsk['char']))
+#
+# subtlex = load_subtlex()
+# # print(len(subtlex['char']))
+# # print(len(subtlex['word']))
+#
+# radicals = load_radicals()
 
-hsk = load_hsk()
-# print(len(hsk))
-# print(len(hsk['word']))
-# print(len(hsk['char']))
-
-subtlex = load_subtlex()
-# print(len(subtlex['char']))
-# print(len(subtlex['word']))
-
-radicals = load_radicals()
+syllables = load_syllables()
