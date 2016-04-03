@@ -285,17 +285,17 @@ class _Syllables():
     def __iter__(self):
         return iter(self.syllables)
 
-    def slot_distance(self, slot, s1, s2):
-        phoneme_slots = {
-            1: 'onset',
-            2: 'glide',
-            3: 'nucleus',
-            4: 'coda',
-            5: 'tone'
-        }
-
-        if type(slot) is int:
-            slot = phoneme_slots[slot]
+    def _slot_distance(self, slot, s1, s2):
+        # phoneme_slots = {
+        #     1: 'onset',
+        #     2: 'glide',
+        #     3: 'nucleus',
+        #     4: 'coda',
+        #     5: 'tone'
+        # }
+        #
+        # if type(slot) is int:
+        #     slot = phoneme_slots[slot]
 
         phoneme1 = self.syllables[s1][slot]
         phoneme2 = self.syllables[s2][slot]
@@ -305,95 +305,123 @@ class _Syllables():
 
         return self._compute_distance(phoneme1, phoneme2)
 
-    # def onset_distance(self, s1, s2):
-    #     onset1 = self.syllables[s1].onset
-    #     onset2 = self.syllables[s2].onset
-    #     return self._compute_distance(onset1, onset2)
-    #
-    # def coda_distance(self, s1, s2):
-    #     coda1 = self.syllables[s1].coda
-    #     coda2 = self.syllables[s2].coda
-    #     return self._compute_distance(coda1, coda2)
-    #
-    # def vowel_distances(self, s1, s2):
-    #     vowels1 = self.syllables[s1].nucleus
-    #     vowels2 = self.syllables[s2].nucleus
-    #     distances = []
-    #     for i in range(3):
-    #         distances.append(self._compute_distance(vowels1[i], vowels2[i]))
-    #
-    #     return distances
-    #
-    # def rime_distances(self, s1, s2):
-    #     rime1 = self.syllables[s1].nucleus + [self.syllables[s1].coda]
-    #     rime2 = self.syllables[s2].nucleus + [self.syllables[s2].coda]
-    #     distances = []
-    #     for i in range(len(rime1)):
-    #         distances.append(self._compute_distance(rime1[i], rime2[i]))
-    #
-    #     return distances
-    #
-    # def nucleus_distance(self, s1, s2):
-    #     vowels1 = self.syllables[s1].nucleus
-    #     vowels2 = self.syllables[s2].nucleus
-    #     nucleus1 = []
-    #     nucleus2 = []
-    #     for i in range(3):
-    #         nucleus1.append(statistics.mean([Decimal(x) for x in vowels1[i]]))
-    #         nucleus2.append(statistics.mean([Decimal(x) for x in vowels2[i]]))
-    #
-    #     return self._compute_distance(nucleus1, nucleus2)
+    def onset_distance(self, s1, s2):
+        on_distance = self._slot_distance('onset', s1, s2)
+        gl_distance = self._slot_distance('glide', s1, s2)
+        #return statistics.mean([on_distance, gl_distance])
 
-    # def tone_distance(self, s1, s2):
-    #     tone1 = self.syllables[s1].tone
-    #     tone2 = self.syllables[s2].tone
-    #     return self._compute_distance(tone1, tone2)
+        glide1 = self.syllables[s1]['syllable'][1]
+        glide2 = self.syllables[s2]['syllable'][1]
 
-    def all_distances(self, s1, s2):
-        distances = []
-        for i in range(1,6):
-            distance = self.slot_distance(i, s1, s2)
-            #if distance is not None:
-            distances.append(distance)
+        return statistics.mean([on_distance, gl_distance])
+        # if glide1 != '' and glide2 != '':
+        #     return on_distance + (gl_distance/2)
+        # elif glide1 == '' and glide2 == '':
+        #     return on_distance
+        # else:
+        #     return on_distance + (gl_distance * 2)
 
-        return distances
-        # return ([
-        #     self.slot_distance('onset', s1, s2),
-        #     self.slot_distance('glide', s1, s2),
-        #     self.slot_distance('nucleus', s1, s2),
-        #     self.slot_distance('coda', s1, s2),
-        #     self.slot_distance('tone', s1, s2)
-        # ])
+    def rime_distance(self, s1, s2):
+        nuc_distance = self._slot_distance('nucleus', s1, s2)
+        cod_distance = self._slot_distance('coda', s1, s2)
+
+        coda1 = self.syllables[s1]['syllable'][3]
+        coda2 = self.syllables[s2]['syllable'][3]
+
+        return statistics.mean([nuc_distance, cod_distance])
+        # if coda1 != '' and coda2 != '':
+        #     #return statistics.mean([nuc_distance, cod_distance])
+        #     return nuc_distance + cod_distance
+        # elif coda1 == '' and coda2 == '':
+        #     return nuc_distance + (cod_distance/3)
+        # else:
+        #     #return statistics.mean([nuc_distance, (cod_distance)])
+        #     return nuc_distance + (cod_distance * 2)
+
+        # on1 = self._get_slot('onset', s1)
+        # on2 = self._get_slot('onset', s2)
+        #
+        # gl1 = self._get_slot('glide', s1)
+        # gl2 = self._get_slot('glide', s2)
+        #
+        # ons = [on1, on2]
+        # gls = [gl1, gl2]
+        # syl1 = [on1, gl1]
+        # syl2 = [on2, gl2]
+        # all_slots = [on1, on2, gl1, gl2]
+        #
+        # if not self._any_slots(all_slots):
+        #     # RULE 1
+        #     return 0
+        # elif self._all_slots(all_slots):
+        #     # RULE 2
+        #     return self._compound_onset(on1, gl1, on2, gl2)
+        # elif self._all_slots(ons) and not self._any_slots(gls):
+        #     # RULE 3
+        #     return self._compute_distance(on1, on2)
+        # elif
+
+
+
+        # # elif self._all_slots(gls) and not self._any_slots(ons):
+        # #     # RULE 4
+        # #     return self._compute_distance(gl1, gl2)
+        # elif self._all_slots(syl1) or self._all_slots(syl2):
+        #     if not self._any_slots(syl1) or not self._any_slots(syl2):
+        #         # RULE 5
+        #         return self._compound_onset(on1, gl1, on2, gl2)
+        #     elif not self._all_slots(gls):
+        #         # RULE 6
+        #         return self._compound_onset(on1, gl1, on2, gl2)
+
+
+        # elif self._all_slots(syl1):
+        #     if not self._any_slots(syl2):
+        #         # RULE 5
+        #         # ALL OF SYL1 / NONE OF SYL2
+        #     elif self._any_slots(syl2):
+        #         # RULE 6
+        #         # ALL OF SYL1 / ONE OF SYL2
+        # elif self._all_slots(syl2):
+        #     if not self._any_slots(syl1):
+        #         # RULE 7
+        #         # ALL OF SYL2 / NONE OF SYL1
+        #     elif self._any_slots(syl1):
+        #         # RULE 8
+        #         # ALL OF SYL2 / ONE OF SYL1
+
+    # def _compound_onset(self, on1, gl1, on2, gl2):
+    #     on_distance = self._compute_distance(on1, on2)
+    #     gl_distance = self._conpute_distance(gl1, gl2)
+    #     return on_distance + gl_distance
+    #
+    # def _get_slot(self, slot, syllable):
+    #     return self.syllables[syllable][slot]
+    #
+    # def _any_slots(self, slots):
+    #     return any(True if x != [0,0,0] else False for x in slots)
+    #
+    # def _all_slots(self, slots):
+    #     return all(True if x != [0,0,0] else False for x in slots)
+
+    # def all_distances(self, s1, s2):
+    #     return ([
+    #         self.slot_distance('onset', s1, s2),
+    #         self.slot_distance('glide', s1, s2),
+    #         self.slot_distance('nucleus', s1, s2),
+    #         self.slot_distance('coda', s1, s2),
+    #         self.slot_distance('tone', s1, s2)
+    #     ])
 
     def syllable_distance(self, s1, s2):
         decimal.getcontext().prec = 5
-        distances = self.all_distances(s1, s2)
-        distances = [Decimal(x) for x in distances]
-        # for i in range(5):
-        #     # if distances[i] is not None:
-        #     distances[i] = Decimal(distances[i])
+        # distances = self.all_distances(s1, s2)
+        # distances = [Decimal(x) for x in distances]
 
-        # if distances[0] is None and distances[1] is None:
-        #     return float(statistics.mean(distances[2:]))
-        # elif distances[0] is None:
-        #     onset = distances[1]
-        # elif distances[1] is None:
-        #     onset = distances[0]
-        # else:
-        if self.syllables[s1]['onset'] == '' and self.syllables[s2]['onset'] == '':
-            onset = distances[1]
-        else:
-            onset = distances[0] + (distances[1]/2)
-
-        # onset = statistics.mean(distances[0:1])
-
-        if self.syllables[s1]['coda'] == '' and self.syllables[s2]['coda'] == '':
-            rime = distances[2]
-        # elif self.syllables[s1]['coda'] == '' or self.syllables[s2]['coda'] == '':
-        #     rime = statistics.mean([distances[2], (distances[3]*2)])
-        else:
-            rime = statistics.mean(distances[2:4])
-        return float(statistics.mean([onset, rime, distances[4]]))
+        onset = self.onset_distance(s1, s2)
+        rime = self.rime_distance(s1, s2)
+        tone = self._slot_distance('tone', s1, s2)
+        return float(sum([onset, rime, tone]))
 
     def _compute_distance(self, l1, l2):
         decimal.getcontext().prec = 5
@@ -414,22 +442,22 @@ def load_syllables():
     with syllables_file.open('r', encoding='utf-8') as f:
         return _Syllables(json.load(f))
 
-# unihan = load_unihan()
-# # print(len(unihan))
-# #
-# cedict, cedictchars = load_cedict()
-# # print(len(cedict))
-# # print(len(cedictchars))
+unihan = load_unihan()
+# print(len(unihan))
 #
-# hsk = load_hsk()
-# # print(len(hsk))
-# # print(len(hsk['word']))
-# # print(len(hsk['char']))
-#
-# subtlex = load_subtlex()
-# # print(len(subtlex['char']))
-# # print(len(subtlex['word']))
-#
-# radicals = load_radicals()
+cedict, cedictchars = load_cedict()
+# print(len(cedict))
+# print(len(cedictchars))
+
+hsk = load_hsk()
+# print(len(hsk))
+# print(len(hsk['word']))
+# print(len(hsk['char']))
+
+subtlex = load_subtlex()
+# print(len(subtlex['char']))
+# print(len(subtlex['word']))
+
+radicals = load_radicals()
 
 syllables = load_syllables()

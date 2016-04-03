@@ -6,6 +6,8 @@ import multiprocessing as mp
 import time
 from collections import deque
 import handata
+import pathlib
+import csv
 
 class TreeCompare:
 
@@ -306,6 +308,24 @@ class IDSDict():
         for comp in sorted_comps:
             if len(comp[0]) > 1:
                 print('{}\t{} | {}'.format(list(comp[0])[0], list(comp[0])[1], comp[1]))
+
+    def output_char_comparisons(self, rev=True):
+        print('Outputting character comparisons to file...')
+        comparisons = self.comparer.char_comparisons.items()
+        sorted_comps = [x for x in sorted(comparisons, key=operator.itemgetter(1), reverse=rev)]
+        print('Characters sorted')
+        count = 0
+        char_comps = pathlib.Path('data/character_comparisons.csv')
+        with char_comps.open('w', encoding='utf-8', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile, lineterminator='\n')
+
+            for row in sorted_comps:
+                if len(row[0]) > 1:
+                    row = [list(row[0])[0], list(row[0])[1], row[1]]
+                    csvwriter.writerow(row)
+                    count += 1
+
+        print('{} comparisons in file'.format(count))
 
 class IDSTree():
 

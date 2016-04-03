@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+import pathlib
 import idstree
 import random
 import handata
@@ -37,10 +38,10 @@ with infile.open(mode='r', encoding='utf-8', newline='') as csvfile:
         else:
             skipped += 1
 
-        # if skipped > 10000:
-        #      break
+        if skipped > 1000:
+             break
 
 #print(str(len(dic.charlist)))
 print('SUBTLEX: {}\tHSK: {}\tCEDICT: {}\tSkipped: {}'.format(subtlexcount, hskcount, cecount, skipped))
 dic.compare_characters(25)
-dic.print_char_comparisons(rev=False)
+dic.output_char_comparisons(rev=False)
