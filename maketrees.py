@@ -24,8 +24,8 @@ infile = Path('./allids.csv')
 with infile.open(mode='r', encoding='utf-8', newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter='\t')
     for row in csvreader:
-        # if random.randint(1,5) != 2:
-        #     continue
+        if random.randint(1,5) != 2:
+            continue
         if row[1] in handata.subtlex['char']:
             dic.add_ids(row[1], row[2])
             subtlexcount += 1
@@ -38,7 +38,7 @@ with infile.open(mode='r', encoding='utf-8', newline='') as csvfile:
         else:
             skipped += 1
 
-        if skipped > 1000:
+        if subtlexcount > 200 and skipped > 500:
              break
 
 #print(str(len(dic.charlist)))
