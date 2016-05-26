@@ -114,7 +114,7 @@ def load_unihan():
     return unihan
 
 def load_cedict():
-    entry = re.compile(r"^(?P<traditional>\w+)\s{1}(?P<simplified>\w+)\s{1}\[(?P<pinyin>.+)\]\s{1}(?P<definitions>.+)")
+    entry = re.compile(r"^(?P<traditional>\w+)\s{1}(?P<simplified>\w+)\s{1}\[(?P<pinyin>.+)\]\s{1}/(?P<definitions>.+)")
 
     cedict = dict()
     cedict_file = pathlib.Path('data/cedict_1_0_ts_utf-8_mdbg.txt')
@@ -131,8 +131,8 @@ def load_cedict():
                         cedict[simplified] = dict()
                         cedict[simplified]['simplified'] = match.group('simplified')
                         cedict[simplified]['traditional'] = match.group('traditional')
-                        cedict[simplified]['pinyin'] = match.group('pinyin')
-                        cedict[simplified]['definitions'] = match.group('definitions')[1:-1].split('/')
+                        cedict[simplified]['pinyin'] = match.group('pinyin').lower()
+                        cedict[simplified]['definitions'] = match.group('definitions')[0:-1].split('/')
 
     cedictchars = list()
     for word in cedict:

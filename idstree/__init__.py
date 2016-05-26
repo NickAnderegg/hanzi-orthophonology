@@ -120,24 +120,36 @@ class TreeCompare:
                             sub_start = [ter_node.children[0:2], ter_node.children[1:3]].index(bin_node.children)
                             for i in range(3):
                                 if sub_start <= i <= (sub_start+1):
-                                    weighted_similarity = self._weighted_similarity(
-                                        self.weights[ter_node.head][i],
-                                        stroke_proportions['b'][i],
-                                        stroke_proportions['b'][i]
-                                    )
-                                    total += weighted_similarity
-                                else:
-                                    weighted_similarity = self._weighted_similarity(
-                                        self.weights[ter_node.head][i],
-                                        0,
-                                        stroke_proportions['b'][i]
-                                    )
-                                    total += weighted_similarity
+                                    # weighted_similarity = self._weighted_similarity(
+                                    #     self.weights[ter_node.head][i],
+                                    #     stroke_proportions['a'][i-sub_start],
+                                    #     stroke_proportions['b'][i]
+                                    # )
+                                    # total += weighted_similarity
+                                    total += stroke_proportions['b'][i]
+                                # else:
+                                #     weighted_similarity = self._weighted_similarity(
+                                #         self.weights[ter_node.head][i],
+                                #         0,
+                                #         stroke_proportions['b'][i]
+                                #     )
+                                #     total += weighted_similarity
 
                             self._add_node_comparison(bin_node.ids, ter_node.ids, total)
-                            print('{}\t{}\t|{}'.format(bin_node.ids, ter_node.ids, total))
+                            # print('Same dir & subset: {}\t{}\t|{}'.format(bin_node.ids, ter_node.ids, total))
                             return total
-                        return 0
+                        else:
+                            for i in range(2):
+                                for j in range(2):
+                                    weighted_similarity = self._weighted_similarity(
+                                        self.weights[bin_node.head][i] * self.weights[ter_node.head][i+j],
+                                        stroke_proportions['a'][i],
+                                        stroke_proportions['b'][i+j]
+                                    )
+                                    total += (self.compare_nodes(bin_node.children[i], ter_node.children[i+j]) * weighted_similarity)
+                            self._add_node_comparison(bin_node.ids, ter_node.ids, total)
+                            # print('Same dir (non-subset): {}\t{}\t|{}'.format(bin_node.ids, ter_node.ids, total))
+                            return total
                     else:
                         """Mismatched vertical and horizontal functors"""
                         total = 0
@@ -149,9 +161,9 @@ class TreeCompare:
                                     stroke_proportions['a'][i],
                                     stroke_proportions['b'][j]
                                 )
-                                total += (self._compare_base_components(a.children[i].head, b.children[j].head) * weighted_similarity)
-                                # total += (self.compare_nodes(a.children[i], b.children[j]) * weighted_similarity)
-                        # print('{}\t{}\t|{}'.format(a.ids, b.ids, total))
+                                #total += (self._compare_base_components(a.children[i].head, b.children[j].head) * weighted_similarity)
+                                total += (self.compare_nodes(a.children[i], b.children[j]) * weighted_similarity)
+                        # print('Mismatched dir: {}\t{}\t|{}'.format(a.ids, b.ids, total))
                         self._add_node_comparison(a.ids, b.ids, total)
                         return total
                 elif {a.head, b.head} <= functors.surrounding.difference('⿻'):
@@ -168,13 +180,81 @@ class TreeCompare:
                     # print('{}\t{}\t|{}'.format(a.ids, b.ids, total))
                     self._add_node_comparison(a.ids, b.ids, total)
                     return total
+                elif (
+                        any([True if (x in functors.surrounding.difference('⿻')) else False for x in {a.head, b.head}])
+                        and any([True if (x in functors.parallel) else False for x in {a.head, b.head}])
+                    ):
+                    """Compare a node with a surrounding functor and one without"""
+                    if a.head in functors.surrounding and b.head in functors.parallel:
+                        surrounding = a
+                        parallel = b
+                    elif b.head in functors.surrounding and a.head in functors.parallel:
+                        surrounding = b
+                        parallel = a
+                    else:
+                        print('ERROR! Surrounding/parallel mismatch...')
+                        return 0
+
+                    # total = 0
+                    stroke_proportions = self._stroke_proportions(surrounding, parallel)
+
+                    inner_weight = stroke_proportions['a'][1]
+                    similarity = self.compare_nodes(surrounding.children[1], parallel)
+                    total = (similarity * inner_weight)
+                    # print('Comparing: {}\t{} | {}, {}'.format(surrounding.children[1].ids, parallel.ids, inner_weight, similarity))
+
+                    self._add_node_comparison(surrounding.ids, parallel.ids, total)
+                    # print('Surrounding comparison: {}\t{}\t|{}'.format(surrounding.ids, parallel.ids, total))
+                    return total
+                elif (a.head == '⿻' or b.head == '⿻') and not ({a.head, b.head} <= set('⿻')):
+                    if a.head == '⿻':
+                        overlapping = a
+                        other = b
+                    else:
+                        overlapping = b
+                        other = a
+
+                    total = 0
+                    stroke_proportions = self._stroke_proportions(overlapping, other)
+                    for i in range(2):
+                        similarity = self.compare_nodes(overlapping.children[i], other)
+                        total += (similarity * stroke_proportions['a'][i])
+
+                    self._add_node_comparison(overlapping.ids, other.ids, total)
+                    # print('Overlapping comparison: {}\t{}\t|{}'.format(overlapping.ids, other.ids, total))
+                    return total
+
             elif a.head in functors.all or b.head in functors.all:
                 """
-                Elimination of (for now) uncomparable node types:
-                    - A tree and an individual character
+                Comparison of a tree and an individual character
                 """
-                self._add_node_comparison(a.ids, b.ids, 0)
-                return 0
+                if a.children:
+                    tree_char = a
+                    indiv_char = b
+                else:
+                    tree_char = b
+                    indiv_char = a
+                stroke_proportions = self._stroke_proportions(tree_char, indiv_char)
+
+                if tree_char.head in functors.surrounding:
+                    inner_weight = stroke_proportions['a'][1]
+                    similarity = self.compare_nodes(tree_char.children[1], indiv_char)
+                    total = (similarity * inner_weight)
+                    # print('Indiv/surrounding comparison: {}\t{} | {}'.format(tree_char.ids, indiv_char.ids, total))
+                else:
+                    total = 0
+                    for i in range(len(tree_char.children)):
+                        similarity = self.compare_nodes(tree_char.children[1], indiv_char)
+                        total += similarity * stroke_proportions['a'][i]
+
+                    tree_strokes = tree_char.get_strokes()
+                    indiv_strokes = indiv_char.get_strokes()
+                    overall_prop = min(tree_strokes, indiv_strokes) / max(tree_strokes, indiv_strokes, 1)
+
+                    total *= overall_prop
+                    # print('Indiv/parallel comparison: {}\t{} | {}'.format(tree_char.ids, indiv_char.ids, total))
+                self._add_node_comparison(tree_char.ids, indiv_char.ids, total)
+                return total
             else:
                 """Compare two individual characters/base components"""
                 similarity = self._compare_base_components(a.head, b.head)
@@ -220,8 +300,8 @@ class TreeCompare:
             self._add_node_comparison(a.ids, b.ids, total)
             return total
 
-        if random.randint(1,100) == 5:
-            print('Uncomparable: {}\t|\t{}'.format(a.ids, b.ids))
+        # if random.randint(1,100) == 5:
+        print('Uncomparable: {}\t|\t{}'.format(a.ids, b.ids))
         return 0
 
     def _stroke_proportions(self, a, b):
@@ -232,10 +312,17 @@ class TreeCompare:
 
         a_strokes = a.get_strokes()
         b_strokes = b.get_strokes()
-        for child in a.children:
-            stroke_proportions['a'].append(child.get_strokes() / a_strokes)
-        for child in b.children:
-            stroke_proportions['b'].append(child.get_strokes() / b_strokes)
+        if a.children:
+            for child in a.children:
+                stroke_proportions['a'].append(child.get_strokes() / a_strokes)
+        else:
+            stroke_proportions['a'].append(1)
+
+        if b.children:
+            for child in b.children:
+                stroke_proportions['b'].append(child.get_strokes() / b_strokes)
+        else:
+            stroke_proportions['b'].append(1)
 
         return stroke_proportions
 
@@ -256,15 +343,19 @@ class TreeCompare:
             radical_b = handata.radicals[rs_b[0]]
 
             if rs_a[0] == rs_b[0]:
-                return 0.25 + 0.25*(min(rs_a[1], rs_b[1])/max(rs_a[1], rs_b[1], 1))
+                return (1 + (min(rs_a[1], rs_b[1])/max(rs_a[1], rs_b[1], 1)))/3
             elif 'total_strokes' in handata.unihan[radical_a] and 'total_strokes' in handata.unihan[radical_b]:
                 a_strokes = int(handata.unihan[radical_a]['total_strokes'])
                 b_strokes = int(handata.unihan[radical_b]['total_strokes'])
 
                 radical_prop    = min(a_strokes, b_strokes)/max(a_strokes, b_strokes, 1)
-                additional_prop = min(rs_a[1], rs_b[1]) / max(rs_a[1], rs_b[1], 1)
 
-                return 0.25*radical_prop + 0.25*additional_prop
+                if max(rs_a[1], rs_b[1]) == 0:
+                    additional_prop = 1
+                else:
+                    additional_prop = min(rs_a[1], rs_b[1]) / max(rs_a[1], rs_b[1], 1)
+
+                return (radical_prop + additional_prop) / 3
         else:
             return 0
 
@@ -314,7 +405,7 @@ class IDSDict():
         else:
             #self.comparer.start_manager()
             processes = deque()
-            per_process = int(len(keys) / chunks)
+            per_process = int(len(keys) / chunks) + 1
             for i in range(chunks):
                 for j in range(i+1):
                     a_beg = i*per_process
@@ -392,7 +483,7 @@ class IDSDict():
             t2 = time.perf_counter()
             print('Process time: {}s'.format((t2-t1)))
             threads = []
-            per_thread = int(len(keys) / chunks)
+            per_thread = int(len(keys) / chunks) + 1
             for i in range(chunks):
                 for j in range(i, chunks):
                     a_beg = i*per_thread

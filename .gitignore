@@ -62,7 +62,6 @@ target/
 .ipynb_checkpoints
 
 # Scaffolding
-utilities/
 generatetrees.py
 ideograph/
 ids/
