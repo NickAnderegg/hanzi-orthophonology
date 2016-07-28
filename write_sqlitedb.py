@@ -11,8 +11,10 @@ import pandas as pd
 
 random.seed()
 
-dbpath = '/Volumes/Portable Expansion/nick/github/orthophonology/db/toy-orthophon.db'
+quit()
 
+# dbpath = '/Volumes/Portable Expansion/nick/github/orthophonology/db/toy-orthophon.db'
+dbpath = '/Volumes/Portable Expansion/nick/github/orthophonology/db/dummy.db'
 monobase = time.time() - time.monotonic()
 def getMonotonic():
     return int((monobase + time.monotonic()) * 1000)
@@ -403,14 +405,14 @@ def create_word_ortho_comps():
     c.execute('''CREATE INDEX word_ortho_comps_similarity_ix ON word_ortho_comps (similarity)''')
     conn.commit()
 
-    print('Import character comparisons to table...')
-    c.execute('''
-        INSERT INTO word_ortho_comps (word1, word2, similarity)
-        SELECT char1, char2, similarity
-        FROM character_comps
-        LIMIT 1000000
-    ''')
-    conn.commit()
+    # print('Import character comparisons to table...')
+    # c.execute('''
+    #     INSERT INTO word_ortho_comps (word1, word2, similarity)
+    #     SELECT char1, char2, similarity
+    #     FROM character_comps
+    #     LIMIT 1000000
+    # ''')
+    # conn.commit()
 
     print('Creating indexes...')
     c.execute('''CREATE INDEX word_ortho_comps_word1_ix ON word_ortho_comps (word1)''')
@@ -454,7 +456,7 @@ def word_ortho_comps():
     print('Creating words dictionary...')
     words = dict()
     # words = []
-    c.execute('''SELECT id, char1, char2 FROM words_ortho WHERE char2 IS NOT NULL ORDER BY id''')
+    c.execute('''SELECT id, char1, char2 FROM words_ortho WHERE char2 IS NULL ORDER BY id''')
 
     for row in c:
         wordid, char1, char2 = row
@@ -482,7 +484,6 @@ def word_ortho_comps():
     #         continue
     # similarities = pd.DataFrame(columns=['char1', 'char2', 'sim'])
     similarities = []
-    sims = pd.DataFrame(columns=['char1', 'char2', 'sim'])
     sim_chunk = []
     # sim_chunk_big = []
     timestamp = time.perf_counter()
@@ -496,8 +497,8 @@ def word_ortho_comps():
             #     skipped += words_len - j
             #     break
 
-            if i % 2 == 0 or j % 2 == 0:
-                continue
+            # if i % 2 == 0 or j % 2 == 0:
+            #     continue
 
             word1 = words[i]
             word2 = words[j]
@@ -514,9 +515,9 @@ def word_ortho_comps():
             freq_diff['wpm'] =          abs(freq1['wpm'] - freq2['wpm'])
             freq_diff['log_count'] =    abs(freq1['log_count'] - freq2['log_count'])
 
-            if freq_diff['log_count'] > .5:
-                skipped += 1
-                continue
+            # if freq_diff['log_count'] > .5:
+            #     skipped += 1
+            #     continue
 
             sim_sum = 0
 
@@ -528,17 +529,17 @@ def word_ortho_comps():
             else:
                 continue
 
-            # if len(word1) == 1:
-            #     similarity = sim_sum
-            # else:
-            if word2[1] in comparisons[word1[1]].keys():
-                sim_sum += comparisons[word1[1]][word2[1]]
-            elif word1[1] in comparisons[word2[1]].keys():
-                sim_sum += comparisons[word2[1]][word1[1]]
+            if len(word1) == 1:
+                similarity = sim_sum
             else:
-                continue
+                if word2[1] in comparisons[word1[1]].keys():
+                    sim_sum += comparisons[word1[1]][word2[1]]
+                elif word1[1] in comparisons[word2[1]].keys():
+                    sim_sum += comparisons[word2[1]][word1[1]]
+                else:
+                    continue
 
-            similarity = sim_sum / 2
+                similarity = sim_sum / 2
 
             sim_chunk.append([i, j, similarity, freq_diff['wpm'], freq_diff['log_count']])
 
@@ -548,10 +549,7 @@ def word_ortho_comps():
         similarities += sorted(sim_chunk, key=operator.itemgetter(2))
         sim_chunk =[]
 
-        if count > 20000000:
-            break
-
-        if running_count > 5000000:
+        if running_count > 50000000:
             # similarities = pd.DataFrame(similarities, columns=['word1', 'word2', 'sim'])
             # similarities = similarities.sort_values(by=['sim', 'word1', 'word2'])
             #
@@ -571,7 +569,7 @@ def word_ortho_comps():
             similarities = []
             running_count = 0
 
-    # similarities = sorted(similarities, key=operator.itemgetter(2))
+    similarities = sorted(similarities, key=operator.itemgetter(2))
     print('Computed {} word pair similarities ({} total, {} skipped). Duration: {}'.format(running_count, count, skipped, (time.perf_counter() - timestamp)))
     timestamp = time.perf_counter()
 
@@ -830,7 +828,7 @@ def word_phono_comps():
     print('Creating words dictionary...')
     words = dict()
     # words = []
-    c.execute('''SELECT id, syl1, syl2 FROM words_phono ORDER BY id''')
+    c.execute('''SELECT id, syl1, syl2 FROM words_phono WHERE syl2 IS NULL ORDER BY id''')
 
     for row in c:
         wordid, syl1, syl2 = row
@@ -859,12 +857,12 @@ def word_phono_comps():
     for ix, i in enumerate(wordskeys):
         for j in wordskeys[(ix+1):]:
 
-            if i % 2 == 0 or j % 2 == 0:
-                continue
-
-            if i <= 5936 and j > 5936:
-                skipped += words_len - j
-                break
+            # if i % 2 == 0 or j % 2 == 0:
+            #     continue
+            #
+            # if i <= 5936 and j > 5936:
+            #     skipped += words_len - j
+            #     break
 
             word1 = words[i]
             word2 = words[j]
@@ -894,17 +892,13 @@ def word_phono_comps():
                 difference = diff_sum / 2
 
             diff_chunk.append([i, j, difference])
-            print(diff_chunk[-1])
             count += 1
             running_count += 1
 
         differences += sorted(diff_chunk, key=operator.itemgetter(2))
         diff_chunk = []
 
-        if count > 25000000:
-            break
-
-        if running_count > 5000000:
+        if running_count > 5000000000:
             differences = sorted(differences, key=operator.itemgetter(2))
             print('Computed {} word pair phonological differences ({} total, {} skipped). Duration: {}'.format(running_count, count, skipped, (time.perf_counter() - timestamp)))
             timestamp = time.perf_counter()

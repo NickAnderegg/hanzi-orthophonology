@@ -1,0 +1,1200 @@
+Critical:	枉	wang3	Aggregate: 12.446257633619883	1.5563
+Both sim:	旺	wang4	Score: 84.5026	2.0128
+Ortho sim:	析	xi1	Score: 71.8553	1.9731
+Phono sim:	亡	wang2	Score: 90.9732	2.3927
+Both diff:	狙	ju1	Score: 85.587	1.3424
+
+Critical:	息	xi1	Aggregate: 12.284568756716576	1.9191
+Both sim:	悉	xi1	Score: 79.0287	1.4771
+Ortho sim:	恙	yang4	Score: 78.6469	0.7782
+Phono sim:	戌	xu1	Score: 95.532	0.0
+Both diff:	院	yuan4	Score: 82.2981	2.752
+
+Critical:	硝	xiao1	Aggregate: 11.345764275778185	1.5315
+Both sim:	销	xiao1	Score: 81.6176	1.6812
+Ortho sim:	硬	ying4	Score: 73.429	3.0414
+Phono sim:	削	xiao1	Score: 92.9972	2.2122
+Both diff:	隐	yin3	Score: 76.5744	2.2742
+
+Critical:	治	zhi4	Aggregate: 10.402752739414652	3.0406
+Both sim:	沼	zhao3	Score: 78.4634	1.9494
+Ortho sim:	沿	yan2	Score: 78.4203	2.2504
+Phono sim:	置	zhi4	Score: 96.898	2.5955
+Both diff:	阉	yan1	Score: 78.0193	1.9191
+
+Critical:	泱	yang1	Aggregate: 11.096931348861073	0.301
+Both sim:	央	yang1	Score: 88.2353	1.7709
+Ortho sim:	沸	fei4	Score: 71.1352	0.7782
+Phono sim:	佯	yang2	Score: 87.6889	1.2553
+Both diff:	蓟	ji4	Score: 90.2801	1.5185
+
+Critical:	济	ji4	Aggregate: 9.944038665897713	2.0453
+Both sim:	齐	qi2	Score: 81.4245	2.8615
+Ortho sim:	洋	yang2	Score: 76.1062	2.2967
+Phono sim:	剂	ji4	Score: 100.0	2.9609
+Both diff:	豌	wan1	Score: 82.1507	0.0
+
+Critical:	汪	wang1	Aggregate: 11.045635754293448	1.9445
+Both sim:	王	wang2	Score: 80.9732	3.3122
+Ortho sim:	沪	hu4	Score: 72.848	0.6021
+Phono sim:	剜	wan1	Score: 89.9216	0.9542
+Both diff:	酗	xu4	Score: 90.1259	0.4771
+
+Critical:	吹	chui1	Aggregate: 10.136437205474015	3.266
+Both sim:	吱	zhi1	Score: 73.0366	1.6902
+Ortho sim:	听	yin3	Score: 71.0302	4.7395
+Phono sim:	摧	cui1	Score: 91.2623	1.4914
+Both diff:	摁	en4	Score: 76.2442	1.7559
+
+Critical:	悉	xi1	Aggregate: 9.069196014023786	1.4771
+Both sim:	息	xi1	Score: 79.0287	1.9191
+Ortho sim:	恙	yang4	Score: 69.4403	0.7782
+Phono sim:	戌	xu1	Score: 95.5989	0.0
+Both diff:	掩	yan3	Score: 75.7904	1.7324
+
+Critical:	栖	qi1	Aggregate: 9.504754732267285	1.5682
+Both sim:	硒	xi1	Score: 73.185	0.8451
+Ortho sim:	样	yang4	Score: 78.7091	3.3701
+Phono sim:	七	qi1	Score: 98.8235	3.2949
+Both diff:	院	yuan4	Score: 82.4673	2.752
+
+Critical:	仗	zhang4	Aggregate: 9.189163283109494	2.4265
+Both sim:	丈	zhang4	Score: 79.4118	1.3979
+Ortho sim:	仪	yi2	Score: 74.6626	2.5105
+Phono sim:	障	zhang4	Score: 99.0156	2.1959
+Both diff:	壹	yi1	Score: 88.1992	0.4771
+
+Critical:	缔	di4	Aggregate: 8.376175759747591	0.6021
+Both sim:	啼	ti2	Score: 78.9035	1.0414
+Ortho sim:	缘	yuan2	Score: 64.9871	2.2504
+Phono sim:	剃	ti4	Score: 93.0916	2.4216
+Both diff:	羊	yang2	Score: 73.8937	2.8432
+
+Critical:	秧	yang1	Aggregate: 9.035876382585124	0.301
+Both sim:	殃	yang1	Score: 75.8824	0.7782
+Ortho sim:	秩	zhi4	Score: 70.769	0.0
+Phono sim:	洋	yang2	Score: 91.1202	2.2967
+Both diff:	汽	qi4	Score: 87.5326	1.6532
+
+Critical:	伪	wei3	Aggregate: 9.077990946206429	1.6628
+Both sim:	为	wei2	Score: 80.9732	4.6586
+Ortho sim:	仲	zhong4	Score: 68.3326	1.1761
+Phono sim:	鲔	wei3	Score: 98.4244	1.0414
+Both diff:	荆	jing1	Score: 83.3523	0.6021
+
+Critical:	王	wang2	Aggregate: 9.026547619384946	3.3122
+Both sim:	汪	wang1	Score: 80.9732	1.9445
+Ortho sim:	主	zhu3	Score: 63.994	3.4814
+Phono sim:	烷	wan2	Score: 86.9881	1.2304
+Both diff:	骥	ji4	Score: 86.6033	0.4771
+
+Critical:	铉	xuan4	Aggregate: 8.78179697847573	1.5315
+Both sim:	眩	xuan4	Score: 81.6176	1.8388
+Ortho sim:	铱	yi1	Score: 67.8529	0.6021
+Phono sim:	渲	xuan4	Score: 96.3689	0.301
+Both diff:	迂	yu1	Score: 87.003	0.0
+
+Critical:	倘	chang2	Aggregate: 9.127679063113126	0.699
+Both sim:	偿	chang2	Score: 79.6006	2.0934
+Ortho sim:	倚	yi3	Score: 69.7628	1.3222
+Phono sim:	尝	chang2	Score: 98.5294	2.8657
+Both diff:	癔	yi4	Score: 81.9514	0.9031
+
+Critical:	析	xi1	Aggregate: 8.405534756571722	1.9731
+Both sim:	枝	zhi1	Score: 73.8998	2.179
+Ortho sim:	枉	wang3	Score: 71.8553	1.5563
+Phono sim:	戌	xu1	Score: 95.3482	0.0
+Both diff:	俑	yong3	Score: 73.4461	0.4771
+
+Critical:	注	zhu4	Aggregate: 7.631580251955529	3.0195
+Both sim:	泣	qi4	Score: 76.5753	1.5682
+Ortho sim:	汪	wang1	Score: 71.53	1.9445
+Phono sim:	贮	zhu4	Score: 100.0	1.3802
+Both diff:	元	yuan2	Score: 75.1734	3.2889
+
+Critical:	芯	xin1	Aggregate: 7.567617206379895	1.3424
+Both sim:	芹	qin2	Score: 81.6062	1.0414
+Ortho sim:	苇	wei3	Score: 64.9284	1.5911
+Phono sim:	珍	zhen1	Score: 93.6578	2.4669
+Both diff:	液	ye4	Score: 72.9556	2.705
+
+Critical:	彷	pang2	Aggregate: 7.731513241099144	1.1139
+Both sim:	妨	fang2	Score: 84.2502	0.8451
+Ortho sim:	役	yi4	Score: 67.237	1.9138
+Phono sim:	房	fang2	Score: 96.0149	3.3833
+Both diff:	睪	yi4	Score: 75.2793	1.0414
+
+Critical:	格	ge2	Aggregate: 6.445474412395857	3.2494
+Both sim:	桔	jie2	Score: 76.2576	1.6335
+Ortho sim:	桉	an1	Score: 60.7077	0.301
+Phono sim:	狗	gou3	Score: 91.58	4.0722
+Both diff:	泳	yong3	Score: 65.5082	2.1614
+
+Critical:	沼	zhao3	Aggregate: 7.0587268329050845	1.9494
+Both sim:	治	zhi4	Score: 78.4634	3.0406
+Ortho sim:	沿	yan2	Score: 63.8395	2.2504
+Phono sim:	赵	zhao4	Score: 96.2673	1.7709
+Both diff:	铟	yin1	Score: 71.0305	0.301
+
+Critical:	桉	an1	Aggregate: 9.09377871875109	0.301
+Both sim:	铵	an3	Score: 63.957	1.2304
+Ortho sim:	桂	gui4	Score: 77.1961	1.5051
+Phono sim:	因	yin1	Score: 85.9444	3.4624
+Both diff:	遂	sui4	Score: 85.5939	1.415
+
+Critical:	沪	hu4	Aggregate: 7.722491960476163	0.6021
+Both sim:	浩	hao4	Score: 75.062	1.9138
+Ortho sim:	汪	wang1	Score: 72.848	1.9445
+Phono sim:	户	hu4	Score: 100.0	2.7716
+Both diff:	菸	yan1	Score: 76.1609	1.699
+
+Critical:	苛	ke1	Aggregate: 7.173409666017883	1.6902
+Both sim:	荷	he2	Score: 81.79	2.3636
+Ortho sim:	苑	yuan4	Score: 67.2698	1.9445
+Phono sim:	抠	kou1	Score: 95.3127	1.7634
+Both diff:	厌	yan4	Score: 70.0072	2.3483
+
+Critical:	纹	wen2	Aggregate: 8.263302910039965	3.0154
+Both sim:	炆	wen2	Score: 72.7941	0.4771
+Ortho sim:	纸	zhi3	Score: 61.1708	3.1535
+Phono sim:	丸	wan2	Score: 89.7733	2.3139
+Both diff:	序	xu4	Score: 71.8199	1.6128
+
+Critical:	滞	zhi4	Aggregate: 9.276808271932357	0.8451
+Both sim:	渡	du4	Score: 72.8617	2.4548
+Ortho sim:	湾	wan1	Score: 74.1037	2.549
+Phono sim:	掷	zhi4	Score: 96.1874	2.1584
+Both diff:	翁	weng1	Score: 81.8073	1.8388
+
+Critical:	沽	gu1	Aggregate: 8.120804996039201	0.8451
+Both sim:	沼	zhao3	Score: 73.7897	1.9494
+Ortho sim:	沿	yan2	Score: 71.7328	2.2504
+Phono sim:	刳	ku1	Score: 98.1336	0.9542
+Both diff:	焰	yan4	Score: 77.7276	0.9031
+
+Critical:	钦	qin1	Aggregate: 8.153866398572504	1.2041
+Both sim:	铛	cheng1	Score: 70.0532	1.3424
+Ortho sim:	钥	yue4	Score: 67.8581	2.0
+Phono sim:	珍	zhen1	Score: 93.8659	2.4669
+Both diff:	霭	ai3	Score: 78.042	0.0
+
+Critical:	字	zi4	Aggregate: 8.152030922398808	3.4103
+Both sim:	守	shou3	Score: 71.0147	3.0997
+Ortho sim:	安	an1	Score: 72.7196	3.2398
+Phono sim:	子	zi3	Score: 96.2673	3.599
+Both diff:	臃	yong1	Score: 83.1017	0.0
+
+Critical:	嗲	dia3	Aggregate: 8.403193033381713	1.0414
+Both sim:	喋	die2	Score: 70.8875	1.1461
+Ortho sim:	嗯	en1	Score: 62.4581	4.5396
+Phono sim:	达	da2	Score: 88.9027	3.3971
+Both diff:	赢	ying2	Score: 75.9264	3.9224
+
+Critical:	哦	e2	Aggregate: 8.457098115170838	4.8412
+Both sim:	娥	e2	Score: 88.2353	1.301
+Ortho sim:	唤	huan4	Score: 64.6755	1.6812
+Phono sim:	额	e2	Score: 93.2773	2.5682
+Both diff:	涮	shuan4	Score: 82.1655	1.8751
+
+Critical:	汨	mi4	Aggregate: 7.642209783908363	0.301
+Both sim:	沐	mu4	Score: 79.8884	1.1139
+Ortho sim:	汪	wang1	Score: 64.316	1.9445
+Phono sim:	剃	ti4	Score: 92.6622	2.4216
+Both diff:	昂	ang2	Score: 71.8397	2.3075
+
+Critical:	湾	wan1	Aggregate: 8.459848961130529	2.549
+Both sim:	温	wen1	Score: 74.4372	2.3802
+Ortho sim:	滞	zhi4	Score: 74.1037	0.8451
+Phono sim:	剜	wan1	Score: 100.0	0.9542
+Both diff:	讫	qi4	Score: 83.8288	0.0
+
+Critical:	熬	ao1	Aggregate: 8.022597765950474	2.8401
+Both sim:	獒	ao2	Score: 84.5026	0.9031
+Ortho sim:	熊	xiong2	Score: 62.8649	3.1673
+Phono sim:	凹	ao1	Score: 93.6975	2.0
+Both diff:	痉	jing4	Score: 83.2433	0.6021
+
+Critical:	泪	lei4	Aggregate: 6.587338248406948	2.2227
+Both sim:	泣	qi4	Score: 76.6671	1.5682
+Ortho sim:	汪	wang1	Score: 62.229	1.9445
+Phono sim:	利	li4	Score: 95.7696	3.3206
+Both diff:	咽	yan1	Score: 68.2267	2.0864
+
+Critical:	活	huo2	Aggregate: 7.408142198591592	4.061
+Both sim:	浊	zhuo2	Score: 82.3296	0.6021
+Ortho sim:	洋	yang2	Score: 61.6767	2.2967
+Phono sim:	郭	guo1	Score: 94.0525	1.6532
+Both diff:	岸	an4	Score: 76.2746	2.2718
+
+Critical:	泣	qi4	Aggregate: 7.919821574296303	1.5682
+Both sim:	泪	lei4	Score: 76.6671	2.2227
+Ortho sim:	汪	wang1	Score: 69.0614	1.9445
+Phono sim:	剂	ji4	Score: 98.1336	2.9609
+Both diff:	剜	wan1	Score: 85.136	0.9542
+
+Critical:	驻	zhu4	Aggregate: 7.150265823133499	2.1703
+Both sim:	柱	zhu4	Score: 73.1158	1.9912
+Ortho sim:	往	wang3	Score: 67.5234	3.7841
+Phono sim:	述	shu4	Score: 97.6528	2.0899
+Both diff:	严	yan2	Score: 73.1936	2.301
+
+Critical:	漆	qi1	Aggregate: 8.202691932262887	2.42
+Both sim:	溪	xi1	Score: 76.2602	2.1239
+Ortho sim:	漾	yang4	Score: 67.7848	1.0792
+Phono sim:	七	qi1	Score: 97.6891	3.2949
+Both diff:	瓮	weng4	Score: 78.8554	1.5441
+
+Critical:	嗜	shi4	Aggregate: 8.008841007053778	2.2529
+Both sim:	嗤	chi1	Score: 74.1408	1.3222
+Ortho sim:	嗡	weng1	Score: 72.7821	1.0
+Phono sim:	式	shi4	Score: 97.9638	3.2327
+Both diff:	阳	yang2	Score: 75.0681	2.3075
+
+Critical:	汶	wen4	Aggregate: 7.806152343123971	1.1761
+Both sim:	文	wen2	Score: 77.2404	3.0374
+Ortho sim:	沏	qi1	Score: 58.6073	1.0
+Phono sim:	吻	wen3	Score: 89.9648	3.4429
+Both diff:	躯	qu1	Score: 78.613	1.6812
+
+Critical:	响	xiang3	Aggregate: 8.736216246126606	3.1477
+Both sim:	晌	shang3	Score: 66.3348	0.0
+Ortho sim:	咦	yi2	Score: 75.4741	2.1614
+Phono sim:	抢	qiang1	Score: 89.6382	3.3479
+Both diff:	邬	wu1	Score: 84.3147	0.0
+
+Critical:	桔	jie2	Aggregate: 6.111863300844175	1.6335
+Both sim:	格	ge2	Score: 76.2576	3.2494
+Ortho sim:	桉	an1	Score: 62.1545	0.301
+Phono sim:	攫	jue2	Score: 96.1324	0.9031
+Both diff:	蕴	yun4	Score: 65.1935	0.699
+
+Critical:	讽	feng3	Aggregate: 6.821286652584257	1.3424
+Both sim:	访	fang3	Score: 81.5254	2.4654
+Ortho sim:	讶	ya4	Score: 60.2398	0.301
+Phono sim:	疯	feng1	Score: 92.5345	3.8162
+Both diff:	遥	yao2	Score: 72.7994	2.2253
+
+Critical:	桂	gui4	Aggregate: 8.442774242809877	1.5051
+Both sim:	桧	gui4	Score: 71.0172	0.301
+Ortho sim:	桉	an1	Score: 77.1961	0.301
+Phono sim:	跪	gui4	Score: 100.0	2.5159
+Both diff:	儿	er2	Score: 83.5033	3.8175
+
+Critical:	铬	ge4	Aggregate: 7.629042497931859	1.3979
+Both sim:	硌	ge4	Score: 81.6176	0.8451
+Ortho sim:	铵	an3	Score: 60.7077	1.2304
+Phono sim:	刻	ke4	Score: 95.794	2.7782
+Both diff:	臃	yong1	Score: 79.1207	0.0
+
+Critical:	哟	yo1	Aggregate: 8.231296527934672	3.0338
+Both sim:	呦	you1	Score: 69.8777	2.6365
+Ortho sim:	响	xiang3	Score: 63.3537	3.1477
+Phono sim:	摇	yao2	Score: 87.4421	2.8407
+Both diff:	逛	guang4	Score: 78.0847	2.6243
+
+Critical:	拄	zhu3	Aggregate: 7.532590109454852	1.4624
+Both sim:	抽	chou1	Score: 75.5211	3.3126
+Ortho sim:	拥	yong1	Score: 61.7205	2.1206
+Phono sim:	贮	zhu4	Score: 96.2673	1.3802
+Both diff:	剜	wan1	Score: 78.3795	0.9542
+
+Critical:	惶	huang2	Aggregate: 7.665555051862891	0.699
+Both sim:	凰	huang2	Score: 85.7647	0.6021
+Ortho sim:	愕	e4	Score: 65.114	0.4771
+Phono sim:	簧	huang2	Score: 96.3904	0.9031
+Both diff:	亿	yi4	Score: 94.3065	2.8299
+
+Critical:	砰	peng1	Aggregate: 6.993421007388187	2.5366
+Both sim:	秤	cheng1	Score: 78.905	1.6435
+Ortho sim:	砹	ai4	Score: 59.2523	0.301
+Phono sim:	平	ping2	Score: 93.4463	3.0492
+Both diff:	臆	yi4	Score: 73.4753	0.0
+
+Critical:	渡	du4	Aggregate: 6.666416028967073	2.4548
+Both sim:	滞	zhi4	Score: 72.8617	0.8451
+Ortho sim:	湾	wan1	Score: 66.59	2.549
+Phono sim:	兔	tu4	Score: 97.9865	2.5955
+Both diff:	鸢	yuan1	Score: 70.2099	1.1461
+
+Critical:	沸	fei4	Aggregate: 6.9813171590954415	0.7782
+Both sim:	沛	pei4	Score: 65.5443	1.0414
+Ortho sim:	泱	yang1	Score: 71.1352	0.301
+Phono sim:	费	fei4	Score: 96.4706	3.0577
+Both diff:	蝇	ying2	Score: 73.0208	1.7634
+
+Critical:	倨	ju4	Aggregate: 7.677752199731726	0.301
+Both sim:	俱	ju4	Score: 79.4118	2.2945
+Ortho sim:	俺	an3	Score: 65.4958	2.017
+Phono sim:	剧	ju4	Score: 100.0	2.9877
+Both diff:	烟	yan1	Score: 78.7753	3.1436
+
+Critical:	喙	hui4	Aggregate: 8.42164849396332	1.3617
+Both sim:	喹	kui2	Score: 77.8735	0.4771
+Ortho sim:	嘤	ying1	Score: 69.7482	1.1139
+Phono sim:	跪	gui4	Score: 97.7852	2.5159
+Both diff:	阴	yin1	Score: 77.1355	2.534
+
+Critical:	呗	bai4	Aggregate: 5.584797364465247	2.5224
+Both sim:	吠	fei4	Score: 79.9989	1.9823
+Ortho sim:	听	yin3	Score: 58.97	4.7395
+Phono sim:	派	pai4	Score: 95.1924	3.7782
+Both diff:	匈	xiong1	Score: 66.403	0.301
+
+Critical:	央	yang1	Aggregate: 7.608190224570673	1.7709
+Both sim:	泱	yang1	Score: 88.2353	0.301
+Ortho sim:	拒	ju4	Score: 61.4356	2.2989
+Phono sim:	冤	yuan1	Score: 85.4536	1.6232
+Both diff:	暨	ji4	Score: 87.4019	1.0414
+
+Critical:	温	wen1	Aggregate: 7.630576801497477	2.3802
+Both sim:	湾	wan1	Score: 74.4372	2.549
+Ortho sim:	滞	zhi4	Score: 61.2833	0.8451
+Phono sim:	剜	wan1	Score: 93.5548	0.9542
+Both diff:	邵	shao4	Score: 78.5002	0.699
+
+Critical:	枝	zhi1	Aggregate: 8.360940070009697	2.179
+Both sim:	歧	qi2	Score: 79.1986	0.8451
+Ortho sim:	枉	wang3	Score: 66.0457	1.5563
+Phono sim:	値	zhi2	Score: 96.2673	1.0792
+Both diff:	雁	yan4	Score: 75.6824	1.0
+
+Critical:	吱	zhi1	Aggregate: 6.652682158126557	1.6902
+Both sim:	岐	qi2	Score: 79.1986	1.2553
+Ortho sim:	听	yin3	Score: 61.5411	4.7395
+Phono sim:	湿	shi1	Score: 96.5403	2.9657
+Both diff:	筵	yan2	Score: 71.7464	0.301
+
+Critical:	滴	di1	Aggregate: 7.322287197211699	2.935
+Both sim:	溪	xi1	Score: 75.4385	2.1239
+Ortho sim:	演	yan3	Score: 65.0272	3.4479
+Phono sim:	剔	ti1	Score: 98.1336	1.6232
+Both diff:	暗	an4	Score: 76.0046	2.945
+
+Critical:	倦	juan4	Aggregate: 7.522347735683535	1.301
+Both sim:	健	jian4	Score: 86.3689	2.5635
+Ortho sim:	倚	yi3	Score: 63.2184	1.3222
+Phono sim:	剑	jian4	Score: 98.1336	3.0199
+Both diff:	讴	ou1	Score: 85.8373	0.9031
+
+Critical:	柱	zhu4	Aggregate: 6.301666067594746	1.9912
+Both sim:	炷	zhu4	Score: 88.2353	0.6021
+Ortho sim:	枉	wang3	Score: 64.4646	1.5563
+Phono sim:	述	shu4	Score: 97.6676	2.0899
+Both diff:	淹	yan1	Score: 73.9698	2.1038
+
+Critical:	诠	quan2	Aggregate: 7.9421729947443405	1.0
+Both sim:	详	xiang2	Score: 70.453	1.7853
+Ortho sim:	诣	yi4	Score: 72.8827	0.301
+Phono sim:	乾	qian2	Score: 98.0534	1.7782
+Both diff:	抑	yi4	Score: 82.0003	1.6021
+
+Critical:	揾	wen3	Aggregate: 7.288990332450315	0.301
+Both sim:	援	yuan2	Score: 70.5919	1.9823
+Ortho sim:	揭	jie1	Score: 60.0821	2.0253
+Phono sim:	问	wen4	Score: 92.2967	4.3108
+Both diff:	哉	zai1	Score: 75.2977	1.699
+
+Critical:	宛	wan3	Aggregate: 7.414569953191355	0.699
+Both sim:	苑	yuan4	Score: 68.2136	1.9445
+Ortho sim:	实	shi2	Score: 65.2745	2.4281
+Phono sim:	衍	yan3	Score: 91.6531	0.301
+Both diff:	滋	zi1	Score: 78.8317	2.0569
+
+Critical:	嘬	chuai4	Aggregate: 8.04339631602497	0.9031
+Both sim:	嘲	chao2	Score: 66.739	1.4314
+Ortho sim:	嘤	ying1	Score: 76.149	1.1139
+Phono sim:	脆	cui4	Score: 92.5475	2.3096
+Both diff:	匀	yun2	Score: 86.3462	1.2041
+
+Critical:	榨	zha4	Aggregate: 7.029904103395006	2.2201
+Both sim:	榻	ta4	Score: 76.2333	1.1461
+Ortho sim:	榅	wen1	Score: 58.179	0.301
+Phono sim:	刹	cha4	Score: 92.2512	1.7324
+Both diff:	殷	yin1	Score: 71.8431	0.6021
+
+Critical:	文	wen2	Aggregate: 7.265396770538863	3.0374
+Both sim:	汶	wen4	Score: 77.2404	1.1761
+Ortho sim:	这	zhe4	Score: 56.0853	5.4579
+Phono sim:	烷	wan2	Score: 89.8879	1.2304
+Both diff:	钙	gai4	Score: 75.3023	1.9395
+
+Critical:	蚝	hao2	Aggregate: 5.5617296966462595	1.1139
+Both sim:	耗	hao4	Score: 80.7698	2.2648
+Ortho sim:	蚊	wen2	Score: 58.2896	1.2041
+Phono sim:	勺	shao2	Score: 93.0547	1.9731
+Both diff:	揾	wen3	Score: 65.944	0.301
+
+Critical:	桎	zhi4	Aggregate: 8.057174169057332	0.0
+Both sim:	栖	qi1	Score: 71.7332	1.5682
+Ortho sim:	样	yang4	Score: 68.3944	3.3701
+Phono sim:	掷	zhi4	Score: 96.0784	2.1584
+Both diff:	玩	wan2	Score: 79.1945	4.115
+
+Critical:	浊	zhuo2	Aggregate: 5.891823499105981	0.6021
+Both sim:	活	huo2	Score: 82.3296	4.061
+Ortho sim:	洋	yang2	Score: 59.8352	2.2967
+Phono sim:	酌	zhuo2	Score: 97.598	1.4314
+Both diff:	庵	an1	Score: 71.2972	0.4771
+
+Critical:	拍	pai1	Aggregate: 5.89318147078305	3.8498
+Both sim:	披	pi1	Score: 79.4738	2.6656
+Ortho sim:	拥	yong1	Score: 59.5727	2.1206
+Phono sim:	白	bai2	Score: 94.4009	3.4288
+Both diff:	勇	yong3	Score: 67.2734	2.2227
+
+Critical:	而	er2	Aggregate: 7.463291879884171	4.5953
+Both sim:	耳	er3	Score: 66.8555	2.8
+Ortho sim:	需	xu1	Score: 65.491	3.0708
+Phono sim:	迎	ying2	Score: 83.4142	1.9294
+Both diff:	叫	jiao4	Score: 85.2667	4.5397
+
+Critical:	积	ji1	Aggregate: 7.679151008388938	2.2095
+Both sim:	职	zhi2	Score: 69.3244	2.8859
+Ortho sim:	秧	yang1	Score: 68.6407	0.301
+Phono sim:	几	ji1	Score: 95.2941	4.3508
+Both diff:	艳	yan4	Score: 75.5018	2.6609
+
+Critical:	娥	e2	Aggregate: 7.420255983596503	1.301
+Both sim:	哦	e2	Score: 88.2353	4.8412
+Ortho sim:	娟	juan1	Score: 61.0814	1.7924
+Phono sim:	厄	e4	Score: 92.5345	2.7101
+Both diff:	恍	huang3	Score: 81.6753	0.8451
+
+Critical:	鸦	ya1	Aggregate: 7.601231786809819	1.0792
+Both sim:	鸭	ya1	Score: 75.8824	2.3284
+Ortho sim:	鸿	hong2	Score: 63.8457	0.9542
+Phono sim:	丫	ya1	Score: 97.6471	2.2068
+Both diff:	胫	jing4	Score: 79.809	1.0
+
+Critical:	蔫	nian1	Aggregate: 7.322851525886477	1.1461
+Both sim:	蔓	man2	Score: 74.7176	1.7853
+Ortho sim:	蔚	yu4	Score: 60.0753	1.4314
+Phono sim:	拈	nian1	Score: 94.9777	1.301
+Both diff:	疫	yi4	Score: 74.923	1.2041
+
+Critical:	距	ju4	Aggregate: 6.36749290205727	2.3139
+Both sim:	巨	ju4	Score: 84.7059	2.5211
+Ortho sim:	央	yang1	Score: 61.4356	1.7709
+Phono sim:	剧	ju4	Score: 100.0	2.9877
+Both diff:	颜	yan2	Score: 76.5866	2.0755
+
+Critical:	巨	ju4	Aggregate: 6.080144935505218	2.5211
+Both sim:	拒	ju4	Score: 84.7059	2.2989
+Ortho sim:	央	yang1	Score: 61.4356	1.7709
+Phono sim:	足	ju4	Score: 100.0	2.8109
+Both diff:	顽	wan2	Score: 74.5296	0.8451
+
+Critical:	拒	ju4	Aggregate: 7.073445134085148	2.2989
+Both sim:	巨	ju4	Score: 84.7059	2.5211
+Ortho sim:	央	yang1	Score: 61.4356	1.7709
+Phono sim:	剧	ju4	Score: 100.0	2.9877
+Both diff:	剜	wan1	Score: 85.3212	0.9542
+
+Critical:	芬	fen1	Aggregate: 6.615405994831345	2.6128
+Both sim:	芯	xin1	Score: 68.3789	1.3424
+Ortho sim:	芸	yi4	Score: 62.7694	0.4771
+Phono sim:	珍	zhen1	Score: 94.0943	2.4669
+Both diff:	揠	ya4	Score: 69.9044	0.301
+
+Critical:	喃	nan2	Aggregate: 6.274300766160048	0.7782
+Both sim:	楠	nan2	Score: 73.9607	1.2788
+Ortho sim:	喻	yu4	Score: 58.65	1.7924
+Phono sim:	囡	nan1	Score: 93.3261	0.301
+Both diff:	浴	yu4	Score: 66.093	2.5172
+
+Critical:	秩	zhi4	Aggregate: 8.0519072124958	0.0
+Both sim:	秘	mi4	Score: 69.5734	2.3541
+Ortho sim:	秧	yang1	Score: 70.769	0.301
+Phono sim:	掷	zhi4	Score: 95.1743	2.1584
+Both diff:	网	wang3	Score: 75.8425	2.9133
+
+Critical:	搡	sang3	Aggregate: 7.589923850137068	1.3979
+Both sim:	搪	tang2	Score: 74.6734	0.301
+Ortho sim:	揖	yi1	Score: 62.5436	0.301
+Phono sim:	档	dang3	Score: 94.8734	2.8306
+Both diff:	屹	yi4	Score: 79.3811	0.0
+
+Critical:	维	wei2	Aggregate: 6.56196707116141	3.1261
+Both sim:	唯	wei2	Score: 88.2353	3.0948
+Ortho sim:	综	zeng4	Score: 61.286	0.7782
+Phono sim:	为	wei2	Score: 98.3957	4.6586
+Both diff:	衷	zhong1	Score: 79.4556	1.0792
+
+Critical:	噪	zao4	Aggregate: 6.893929381827796	1.415
+Both sim:	燥	zao4	Score: 74.4364	1.6021
+Ortho sim:	嘤	ying1	Score: 62.2813	1.1139
+Phono sim:	赵	zhao4	Score: 97.2627	1.7709
+Both diff:	音	yin1	Score: 73.7846	2.9025
+
+Critical:	嘎	ga2	Aggregate: 6.979484192932864	2.1303
+Both sim:	嗨	hai1	Score: 69.0044	4.4037
+Ortho sim:	嘤	ying1	Score: 60.3578	1.1139
+Phono sim:	钆	ga2	Score: 92.8247	0.301
+Both diff:	用	yong4	Score: 72.6307	4.7196
+
+Critical:	吠	fei4	Aggregate: 6.992314904158707	1.9823
+Both sim:	呗	bai4	Score: 79.9989	2.5224
+Ortho sim:	听	yin3	Score: 56.7134	4.7395
+Phono sim:	废	fei4	Score: 92.1218	2.5263
+Both diff:	臃	yong1	Score: 77.6957	0.0
+
+Critical:	殃	yang1	Aggregate: 7.150486700803478	0.7782
+Both sim:	秧	yang1	Score: 75.8824	0.301
+Ortho sim:	炽	chi4	Score: 60.7659	1.0792
+Phono sim:	洋	yang2	Score: 90.5483	2.2967
+Both diff:	济	ji4	Score: 85.8846	2.0453
+
+Critical:	健	jian4	Aggregate: 7.157405793827518	2.5635
+Both sim:	倦	juan4	Score: 86.3689	1.301
+Ortho sim:	倚	yi3	Score: 61.9297	1.3222
+Phono sim:	剑	jian4	Score: 100.0	3.0199
+Both diff:	医	yi1	Score: 84.3812	2.5527
+
+Critical:	守	shou3	Aggregate: 6.955109004568432	3.0997
+Both sim:	导	dao3	Score: 78.0041	2.29
+Ortho sim:	安	an1	Score: 62.0532	3.2398
+Phono sim:	陡	dou3	Score: 96.4788	1.3979
+Both diff:	臃	yong1	Score: 72.06	0.0
+
+Critical:	仲	zhong4	Aggregate: 6.953044947862013	1.1761
+Both sim:	中	zhong1	Score: 73.5077	4.5424
+Ortho sim:	伪	wei3	Score: 68.3326	1.6628
+Phono sim:	郑	zheng4	Score: 96.6177	1.5798
+Both diff:	锿	ai1	Score: 88.2037	0.301
+
+Critical:	喹	kui2	Aggregate: 7.005124115197699	0.4771
+Both sim:	喙	hui4	Score: 77.8735	1.3617
+Ortho sim:	嘤	ying1	Score: 60.0704	1.1139
+Phono sim:	魁	kui2	Score: 97.2851	1.5051
+Both diff:	珥	er3	Score: 74.8269	0.7782
+
+Critical:	倜	ti4	Aggregate: 6.945765347122744	0.8451
+Both sim:	倍	bei4	Score: 78.2209	3.1667
+Ortho sim:	俺	an3	Score: 59.9181	2.017
+Phono sim:	剃	ti4	Score: 100.0	2.4216
+Both diff:	剜	wan1	Score: 79.9326	0.9542
+
+Critical:	旺	wang4	Aggregate: 6.980219396767936	2.0128
+Both sim:	枉	wang3	Score: 84.5026	1.5563
+Ortho sim:	玆	zi1	Score: 59.0895	1.2788
+Phono sim:	亡	wang2	Score: 87.2404	2.3927
+Both diff:	疽	ju1	Score: 89.2315	1.3802
+
+Critical:	仪	yi2	Aggregate: 7.053861820526183	2.5105
+Both sim:	义	yi4	Score: 71.9463	2.4116
+Ortho sim:	仗	zhang4	Score: 74.6626	2.4265
+Phono sim:	颐	yi2	Score: 98.0392	1.4314
+Both diff:	眶	kuang4	Score: 92.3438	1.0
+
+Critical:	持	chi2	Aggregate: 6.775735401949486	2.5224
+Both sim:	挤	ji3	Score: 70.3751	2.9528
+Ortho sim:	按	an4	Score: 68.4046	3.5743
+Phono sim:	匙	chi2	Score: 98.9814	2.1206
+Both diff:	远	yuan3	Score: 74.1094	3.8176
+
+Critical:	思	si1	Aggregate: 6.924832475907703	2.716
+Both sim:	息	xi1	Score: 68.645	1.9191
+Ortho sim:	恙	yang4	Score: 67.3519	0.7782
+Phono sim:	施	shi1	Score: 94.7892	2.6848
+Both diff:	漾	yang4	Score: 82.44	1.0792
+
+Critical:	挤	ji3	Aggregate: 6.517443754777181	2.9528
+Both sim:	齐	qi2	Score: 85.1572	2.8615
+Ortho sim:	拥	yong1	Score: 59.5377	2.1206
+Phono sim:	剂	ji4	Score: 96.2673	2.9609
+Both diff:	纨	wan2	Score: 77.0871	0.4771
+
+Critical:	抬	tai2	Aggregate: 6.119513809202897	3.0212
+Both sim:	招	zhao1	Score: 81.7549	3.2274
+Ortho sim:	拥	yong1	Score: 58.4514	2.1206
+Phono sim:	太	tai4	Score: 92.1423	4.8139
+Both diff:	荫	yin4	Score: 70.0331	1.301
+
+Critical:	骐	qi2	Aggregate: 6.909092334748468	0.8451
+Both sim:	棋	qi2	Score: 73.7968	2.1303
+Ortho sim:	验	yan4	Score: 60.0838	2.2718
+Phono sim:	脐	qi2	Score: 95.0089	1.4771
+Both diff:	痒	yang3	Score: 79.5082	2.5224
+
+Critical:	偿	chang2	Aggregate: 7.4202174184680745	2.0934
+Both sim:	倘	chang2	Score: 79.6006	0.699
+Ortho sim:	倚	yi3	Score: 61.1281	1.3222
+Phono sim:	尝	chang2	Score: 98.7089	2.8657
+Both diff:	粥	yu4	Score: 81.236	2.1523
+
+Critical:	炎	yan2	Aggregate: 6.968408467607612	2.1367
+Both sim:	炆	wen2	Score: 73.4433	0.4771
+Ortho sim:	炊	chui1	Score: 59.667	0.0
+Phono sim:	衍	yan3	Score: 96.2673	0.301
+Both diff:	惧	ju4	Score: 76.0352	1.8513
+
+Critical:	芹	qin2	Aggregate: 6.214476201283964	1.0414
+Both sim:	芯	xin1	Score: 81.6062	1.3424
+Ortho sim:	苇	wei3	Score: 61.3748	1.5911
+Phono sim:	斤	jin1	Score: 94.4009	1.8261
+Both diff:	腋	ye4	Score: 69.2851	0.301
+
+Critical:	概	gai4	Aggregate: 8.0045385596834	1.0792
+Both sim:	榨	zha4	Score: 64.1434	2.2201
+Ortho sim:	榅	wen1	Score: 71.1919	0.301
+Phono sim:	太	tai4	Score: 91.409	4.8139
+Both diff:	而	er2	Score: 72.1984	4.5953
+
+Critical:	噌	ceng1	Aggregate: 6.951156544306815	1.1139
+Both sim:	噔	deng1	Score: 77.6932	0.7782
+Ortho sim:	嗳	ai3	Score: 56.6094	1.3802
+Phono sim:	成	cheng2	Score: 93.4319	4.0983
+Both diff:	悦	yue4	Score: 78.9401	1.4771
+
+Critical:	秘	mi4	Aggregate: 6.1224172568088795	2.3541
+Both sim:	铋	bi4	Score: 75.0139	0.4771
+Ortho sim:	秧	yang1	Score: 53.4328	0.301
+Phono sim:	俪	li4	Score: 89.0855	0.0
+Both diff:	璜	huang2	Score: 68.0253	1.1461
+
+Critical:	倚	yi3	Aggregate: 6.7916343903775855	1.3222
+Both sim:	偶	ou3	Score: 67.6679	2.6702
+Ortho sim:	倌	guan1	Score: 77.5097	0.0
+Phono sim:	乙	yi3	Score: 98.6928	2.0086
+Both diff:	疮	chuang1	Score: 91.9277	1.5051
+
+Critical:	促	cu4	Aggregate: 6.785686543590278	1.415
+Both sim:	俗	su2	Score: 77.8735	2.233
+Ortho sim:	佯	yang2	Score: 58.1959	1.2553
+Phono sim:	蹙	cu4	Score: 98.5594	0.4771
+Both diff:	剜	wan1	Score: 79.8552	0.9542
+
+Critical:	吽	hong1	Aggregate: 7.587847574775215	0.301
+Both sim:	攻	gong1	Score: 68.3734	2.4871
+Ortho sim:	呀	ya0	Score: 68.2575	4.0294
+Phono sim:	凶	xiong1	Score: 92.9524	2.8722
+Both diff:	也	ye3	Score: 80.551	5.1199
+
+Critical:	榅	wen1	Aggregate: 7.2299477313440175	0.301
+Both sim:	椿	chun1	Score: 57.7464	0.301
+Ortho sim:	概	gai4	Score: 71.1919	1.0792
+Phono sim:	闻	wen2	Score: 89.0275	3.3687
+Both diff:	汰	tai4	Score: 76.6618	0.9542
+
+Critical:	缉	ji1	Aggregate: 6.7725818086853025	1.8129
+Both sim:	辑	ji2	Score: 70.228	1.5315
+Ortho sim:	缘	yuan2	Score: 66.6071	2.2504
+Phono sim:	几	ji1	Score: 96.0784	4.3508
+Both diff:	赝	yan4	Score: 83.4724	0.0
+
+Critical:	冈	gang1	Aggregate: 6.746597287465973	2.1173
+Both sim:	凶	xiong1	Score: 77.5246	2.8722
+Ortho sim:	区	ou1	Score: 67.6036	3.5049
+Phono sim:	钢	gang1	Score: 100.0	2.2201
+Both diff:	意	yi4	Score: 90.9414	3.292
+
+Critical:	提	ti2	Aggregate: 6.549544074267816	3.7229
+Both sim:	揉	rou2	Score: 75.6406	2.1461
+Ortho sim:	援	yuan2	Score: 56.255	1.9823
+Phono sim:	剔	ti1	Score: 96.2673	1.6232
+Both diff:	忘	wang4	Score: 73.5818	3.8525
+
+Critical:	倔	jue2	Aggregate: 6.735022003534426	1.6232
+Both sim:	借	jie4	Score: 70.9623	3.5031
+Ortho sim:	俺	an3	Score: 63.4433	2.017
+Phono sim:	邪	xie2	Score: 95.9189	2.3345
+Both diff:	莺	ying1	Score: 80.6611	0.9031
+
+Critical:	唱	chang4	Aggregate: 7.3224935756410465	3.7993
+Both sim:	娼	chang1	Score: 77.0371	1.0
+Ortho sim:	喂	wei2	Score: 61.7589	4.0525
+Phono sim:	障	zhang4	Score: 94.3152	2.1959
+Both diff:	威	wei1	Score: 83.7536	2.617
+
+Critical:	位	wei4	Aggregate: 6.9441093040221995	4.214
+Both sim:	伟	wei3	Score: 70.8791	2.1173
+Ortho sim:	伸	shen1	Score: 65.9651	2.9025
+Phono sim:	桅	wei2	Score: 92.5345	1.4314
+Both diff:	钟	zhong1	Score: 85.6804	3.396
+
+Critical:	慌	huang1	Aggregate: 7.096036049892853	2.5843
+Both sim:	惶	huang2	Score: 75.6791	0.699
+Ortho sim:	愕	e4	Score: 72.9644	0.4771
+Phono sim:	咣	guang1	Score: 96.1253	0.7782
+Both diff:	驭	yu4	Score: 96.6293	1.0
+
+Critical:	溪	xi1	Aggregate: 7.65256665082578	2.1239
+Both sim:	漆	qi1	Score: 76.2602	2.42
+Ortho sim:	演	yan3	Score: 62.0978	3.4479
+Phono sim:	昔	xi1	Score: 96.7647	2.1673
+Both diff:	晏	yan4	Score: 78.0804	0.301
+
+Critical:	搪	tang2	Aggregate: 7.2391772337488645	0.301
+Both sim:	搡	sang3	Score: 74.6734	1.3979
+Ortho sim:	揖	yi1	Score: 58.1818	0.301
+Phono sim:	尝	chang2	Score: 93.6425	2.8657
+Both diff:	鹬	yu4	Score: 77.159	0.9031
+
+Critical:	湖	hu2	Aggregate: 7.031462009121233	2.917
+Both sim:	渴	ke3	Score: 70.0819	2.4654
+Ortho sim:	漾	yang4	Score: 62.8582	1.0792
+Phono sim:	虎	hu3	Score: 95.6791	2.7404
+Both diff:	盎	ang4	Score: 75.5738	1.415
+
+Critical:	侄	zhi2	Aggregate: 6.781824525143857	0.699
+Both sim:	俚	li3	Score: 65.5559	0.699
+Ortho sim:	佯	yang2	Score: 68.3944	1.2553
+Phono sim:	执	zhi2	Score: 97.4265	2.3522
+Both diff:	腕	wan4	Score: 75.7544	2.233
+
+Critical:	嘲	chao2	Aggregate: 5.436631961701043	1.4314
+Both sim:	嘈	cao2	Score: 79.1718	0.7782
+Ortho sim:	嘤	ying1	Score: 57.6419	1.1139
+Phono sim:	勺	shao2	Score: 96.9076	1.9731
+Both diff:	运	yun4	Score: 67.1044	3.0777
+
+Critical:	嗓	sang3	Aggregate: 6.967188784415289	0.8451
+Both sim:	嗙	pang3	Score: 82.0417	1.2041
+Ortho sim:	嗳	ai3	Score: 57.1389	1.3802
+Phono sim:	挡	dang3	Score: 92.6947	2.9581
+Both diff:	污	wu1	Score: 77.4853	1.699
+
+Critical:	铝	lv3	Aggregate: 6.602963977686679	1.9395
+Both sim:	铬	ge4	Score: 71.7091	1.3979
+Ortho sim:	铵	an3	Score: 56.7587	1.2304
+Phono sim:	礼	li3	Score: 92.6725	2.9315
+Both diff:	猿	yuan2	Score: 69.5126	1.9912
+
+Critical:	憎	zeng1	Aggregate: 6.937798390396946	1.2304
+Both sim:	憧	chong1	Score: 75.8045	0.0
+Ortho sim:	懊	ao4	Score: 58.962	0.4771
+Phono sim:	铛	cheng1	Score: 94.5626	1.3424
+Both diff:	轧	ya4	Score: 80.923	1.7559
+
+Critical:	沿	yan2	Aggregate: 6.751301353450955	2.2504
+Both sim:	泱	yang1	Score: 56.7771	0.301
+Ortho sim:	治	zhi4	Score: 78.4203	3.0406
+Phono sim:	衍	yan3	Score: 96.2673	0.301
+Both diff:	迄	qi4	Score: 79.8746	0.0
+
+Critical:	找	zhao3	Aggregate: 5.517929219722142	4.6688
+Both sim:	扯	che3	Score: 77.1028	3.2087
+Ortho sim:	拥	yong1	Score: 56.8584	2.1206
+Phono sim:	赵	zhao4	Score: 96.2673	1.7709
+Both diff:	萦	ying2	Score: 66.7001	0.301
+
+Critical:	嘈	cao2	Aggregate: 5.387836240423746	0.7782
+Both sim:	嘲	chao2	Score: 79.1718	1.4314
+Ortho sim:	嘤	ying1	Score: 58.1831	1.1139
+Phono sim:	勺	shao2	Score: 95.8048	1.9731
+Both diff:	甬	yong3	Score: 65.383	0.0
+
+Critical:	铛	cheng1	Aggregate: 7.11502009335578	1.3424
+Both sim:	裆	dang1	Score: 71.5821	1.2304
+Ortho sim:	钥	yue4	Score: 66.0732	2.0
+Phono sim:	撑	cheng1	Score: 97.8758	2.9657
+Both diff:	傲	ao4	Score: 80.1474	2.2175
+
+Critical:	呷	xia1	Aggregate: 5.9224707114404005	1.0414
+Both sim:	岬	jia3	Score: 78.5551	1.3802
+Ortho sim:	听	yin3	Score: 55.926	4.7395
+Phono sim:	匣	xia2	Score: 96.2673	1.301
+Both diff:	隠	yin3	Score: 71.8099	1.3802
+
+Critical:	啫	zhe3	Aggregate: 6.601257168087748	0.699
+Both sim:	啧	ze2	Score: 75.8828	1.4914
+Ortho sim:	嗡	weng1	Score: 54.3657	1.0
+Phono sim:	测	ce4	Score: 92.9541	2.7084
+Both diff:	肮	ang1	Score: 77.3061	0.4771
+
+Critical:	捅	tong3	Aggregate: 6.760591411888362	2.7745
+Both sim:	控	kong4	Score: 64.0663	3.1824
+Ortho sim:	挨	ai1	Score: 69.1954	2.5623
+Phono sim:	筒	tong3	Score: 97.407	2.4281
+Both diff:	耶	ye1	Score: 77.427	3.6149
+
+Critical:	详	xiang2	Aggregate: 7.65991018498511	1.7853
+Both sim:	诠	quan2	Score: 70.453	1.0
+Ortho sim:	诣	yi4	Score: 73.3245	0.301
+Phono sim:	祥	xiang2	Score: 100.0	1.6812
+Both diff:	兀	wu4	Score: 82.3539	1.301
+
+Critical:	呔	tai1	Aggregate: 6.582351444539	0.9542
+Both sim:	吧	ba1	Score: 73.6899	5.288
+Ortho sim:	咏	yong3	Score: 55.5665	1.2788
+Phono sim:	腮	sai1	Score: 93.3689	1.6628
+Both diff:	佣	yong4	Score: 77.4799	1.3424
+
+Critical:	梓	zi3	Aggregate: 7.178077980794469	0.4771
+Both sim:	桎	zhi4	Score: 71.0655	0.0
+Ortho sim:	样	yang4	Score: 62.6057	3.3701
+Phono sim:	死	si3	Score: 95.035	4.644
+Both diff:	沅	yuan2	Score: 74.854	1.1761
+
+Critical:	嗽	sou4	Aggregate: 6.344735916181245	0.699
+Both sim:	嘈	cao2	Score: 71.1635	0.7782
+Ortho sim:	嘤	ying1	Score: 59.0458	1.1139
+Phono sim:	陡	dou3	Score: 94.0525	1.3979
+Both diff:	氧	yang3	Score: 67.8638	2.3747
+
+Critical:	抽	chou1	Aggregate: 5.975626456526438	3.3126
+Both sim:	拄	zhu3	Score: 75.5211	1.4624
+Ortho sim:	拥	yong1	Score: 56.4578	2.1206
+Phono sim:	邹	zou1	Score: 96.6868	0.301
+Both diff:	碗	wan3	Score: 69.8025	2.9112
+
+Critical:	俄	e2	Aggregate: 7.07854635592645	2.5416
+Both sim:	侮	wu3	Score: 78.8607	0.4771
+Ortho sim:	便	bian4	Score: 61.9347	3.3766
+Phono sim:	蛾	e2	Score: 100.0	0.9542
+Both diff:	况	kuang4	Score: 82.4627	1.4914
+
+Critical:	苑	yuan4	Aggregate: 6.8553312073132755	1.9445
+Both sim:	宛	wan3	Score: 68.2136	0.699
+Ortho sim:	苛	ke1	Score: 67.2698	1.6902
+Phono sim:	愿	yuan4	Score: 96.2185	3.4376
+Both diff:	羁	ji1	Score: 80.8587	1.4771
+
+Critical:	侮	wu3	Aggregate: 6.542955937242482	0.4771
+Both sim:	俄	e2	Score: 78.8607	2.5416
+Ortho sim:	便	bian4	Score: 60.3585	3.3766
+Phono sim:	呕	ou3	Score: 96.6177	2.0086
+Both diff:	光	guang1	Score: 88.1127	3.5774
+
+Critical:	柑	gan1	Aggregate: 6.92698904474653	0.7782
+Both sim:	根	gen1	Score: 71.1583	3.5328
+Ortho sim:	柚	you4	Score: 67.8616	1.3617
+Phono sim:	甘	gan1	Score: 100.0	2.5145
+Both diff:	肟	wo4	Score: 77.5719	0.4771
+
+Critical:	俸	feng4	Aggregate: 6.7632071407266645	0.4771
+Both sim:	倘	chang2	Score: 67.8663	0.699
+Ortho sim:	倭	wo1	Score: 64.5594	0.7782
+Phono sim:	剩	sheng4	Score: 94.5253	3.2598
+Both diff:	约	yao1	Score: 79.1619	3.4619
+
+Critical:	星	xing1	Aggregate: 6.64187574284171	3.3522
+Both sim:	昌	chang1	Score: 62.323	1.7993
+Ortho sim:	昱	yu4	Score: 70.2159	1.0414
+Phono sim:	厅	ting1	Score: 93.0221	2.711
+Both diff:	扼	e4	Score: 81.7918	0.8451
+
+Critical:	拮	jie2	Aggregate: 6.5150493266028535	0.0
+Both sim:	持	chi2	Score: 67.7653	2.5224
+Ortho sim:	按	an4	Score: 65.8872	3.5743
+Phono sim:	邪	xie2	Score: 97.7852	2.3345
+Both diff:	韵	yun4	Score: 79.6103	1.4771
+
+Critical:	昏	hun1	Aggregate: 7.678944738479109	2.6857
+Both sim:	昆	kun1	Score: 67.6919	1.9638
+Ortho sim:	杳	yao3	Score: 65.2969	0.301
+Phono sim:	獾	huan1	Score: 88.8835	1.6902
+Both diff:	捱	ai2	Score: 79.3297	1.7243
+
+Critical:	倍	bei4	Aggregate: 5.8274550975767	3.1667
+Both sim:	倜	ti4	Score: 78.2209	0.8451
+Ortho sim:	俺	an3	Score: 54.9237	2.017
+Phono sim:	辈	bei4	Score: 95.0368	1.9777
+Both diff:	荧	ying2	Score: 70.9949	1.0792
+
+Critical:	嗤	chi1	Aggregate: 6.509653423082223	1.3222
+Both sim:	嗜	shi4	Score: 74.1408	2.2529
+Ortho sim:	嗡	weng1	Score: 61.7705	1.0
+Phono sim:	笞	chi1	Score: 97.9638	0.301
+Both diff:	彦	yan4	Score: 82.5572	0.0
+
+Critical:	滥	lan4	Aggregate: 7.056026354222302	2.1399
+Both sim:	湛	zhan4	Score: 72.427	0.301
+Ortho sim:	溢	yi4	Score: 57.7058	1.7709
+Phono sim:	烂	lan4	Score: 92.6328	3.4275
+Both diff:	咿	yi1	Score: 75.8158	1.2304
+
+Critical:	径	jing4	Aggregate: 6.85258531198233	1.3802
+Both sim:	经	jing1	Score: 77.0371	3.0224
+Ortho sim:	呵	a1	Score: 57.4508	2.6803
+Phono sim:	擤	xing3	Score: 91.5202	1.4771
+Both diff:	瑶	yao2	Score: 84.2427	0.4771
+
+Critical:	桧	gui4	Aggregate: 6.501960072378042	0.301
+Both sim:	烩	hui4	Score: 86.0205	1.3802
+Ortho sim:	桉	an1	Score: 59.978	0.301
+Phono sim:	跪	gui4	Score: 100.0	2.5159
+Both diff:	瘾	yin3	Score: 79.9168	2.4314
+
+Critical:	渴	ke3	Aggregate: 6.208025325548566	2.4654
+Both sim:	湖	hu2	Score: 70.0819	2.917
+Ortho sim:	湲	yuan2	Score: 59.8044	0.301
+Phono sim:	刻	ke4	Score: 96.2673	2.7782
+Both diff:	鞍	an1	Score: 71.1388	1.3979
+
+Critical:	俯	fu3	Aggregate: 6.4939726101401885	1.3617
+Both sim:	俘	fu2	Score: 74.5945	0.7782
+Ortho sim:	俺	an3	Score: 54.59	2.017
+Phono sim:	副	fu4	Score: 96.2673	3.4431
+Both diff:	剜	wan1	Score: 75.0649	0.9542
+
+Critical:	缆	lan3	Aggregate: 6.2047583292214625	1.5911
+Both sim:	榄	lan3	Score: 73.9607	0.9542
+Ortho sim:	缢	yi4	Score: 53.0426	0.0
+Phono sim:	怜	lian2	Score: 91.957	1.7853
+Both diff:	忆	yi4	Score: 70.2621	2.3502
+
+Critical:	演	yan3	Aggregate: 6.482938309651112	3.4479
+Both sim:	源	yuan2	Score: 70.2326	2.5185
+Ortho sim:	滴	di1	Score: 65.0272	2.935
+Phono sim:	衍	yan3	Score: 100.0	0.301
+Both diff:	驱	qu1	Score: 79.8687	2.3385
+
+Critical:	掸	dan3	Aggregate: 6.145391985027938	1.3222
+Both sim:	禅	chan2	Score: 74.396	1.6335
+Ortho sim:	揖	yi1	Score: 53.4102	0.301
+Phono sim:	袒	tan3	Score: 95.0316	0.9542
+Both diff:	郁	yu4	Score: 72.0347	1.2041
+
+Critical:	呵	a1	Aggregate: 7.288291133774371	2.6803
+Both sim:	哎	ai1	Score: 70.6503	3.0013
+Ortho sim:	呯	ping2	Score: 58.7684	1.7924
+Phono sim:	哀	ai1	Score: 86.8267	1.716
+Both diff:	庆	qing4	Score: 79.1177	2.0969
+
+Critical:	凶	xiong1	Aggregate: 6.442120086959654	2.8722
+Both sim:	冈	gang1	Score: 77.5246	2.1173
+Ortho sim:	区	ou1	Score: 68.0388	3.5049
+Phono sim:	兄	xiong1	Score: 100.0	2.3856
+Both diff:	艾	ai4	Score: 94.3235	2.9666
+
+Critical:	嗥	hao2	Aggregate: 6.27186733320598	0.6021
+Both sim:	嗨	hai1	Score: 69.8914	4.4037
+Ortho sim:	嗡	weng1	Score: 60.3899	1.0
+Phono sim:	勺	shao2	Score: 94.3443	1.9731
+Both diff:	陨	yun3	Score: 67.5738	0.7782
+
+Critical:	讧	hong4	Aggregate: 7.241941885187812	0.0
+Both sim:	训	xun4	Score: 73.5532	2.2355
+Ortho sim:	讹	e2	Score: 60.5575	0.6021
+Phono sim:	控	kong4	Score: 89.9566	3.1824
+Both diff:	淤	yu1	Score: 82.4841	2.1335
+
+Critical:	昆	kun1	Aggregate: 8.021455968428523	1.9638
+Both sim:	昏	hun1	Score: 67.6919	2.6857
+Ortho sim:	昱	yu4	Score: 60.9864	1.0414
+Phono sim:	関	guan1	Score: 86.1738	0.301
+Both diff:	鄂	e4	Score: 74.5877	0.9031
+
+Critical:	嘚	de1	Aggregate: 6.393482821393281	1.0
+Both sim:	嘀	di1	Score: 79.6545	1.6628
+Ortho sim:	嘤	ying1	Score: 54.8075	1.1139
+Phono sim:	都	du1	Score: 91.5663	5.2495
+Both diff:	赝	yan4	Score: 73.5556	0.0
+
+Critical:	铰	jiao3	Aggregate: 6.93019249776439	0.4771
+Both sim:	铑	lao3	Score: 69.4648	0.301
+Ortho sim:	银	yin2	Score: 62.3298	2.7427
+Phono sim:	搅	jiao3	Score: 92.8699	2.5527
+Both diff:	尹	yin3	Score: 69.8271	1.5563
+
+Critical:	蚊	wen2	Aggregate: 6.626462841596212	1.2041
+Both sim:	炆	wen2	Score: 66.8627	0.4771
+Ortho sim:	蚝	hao2	Score: 58.2896	1.1139
+Phono sim:	丸	wan2	Score: 90.9077	2.3139
+Both diff:	氦	hai4	Score: 74.0207	1.6232
+
+Critical:	娟	juan1	Aggregate: 6.981981784023115	1.7924
+Both sim:	绢	juan4	Score: 77.0371	1.6902
+Ortho sim:	娥	e2	Score: 61.0814	1.301
+Phono sim:	氙	xian1	Score: 93.65	0.7782
+Both diff:	弋	yi4	Score: 85.978	0.301
+
+Critical:	功	gong1	Aggregate: 6.440556075390989	2.3927
+Both sim:	弘	hong2	Score: 64.6407	2.4014
+Ortho sim:	幼	you4	Score: 69.6369	1.8633
+Phono sim:	凶	xiong1	Score: 92.1685	2.8722
+Both diff:	拗	ao4	Score: 86.7356	1.1139
+
+Critical:	炽	chi4	Aggregate: 7.471002701936139	1.0792
+Both sim:	炬	ju4	Score: 71.2799	1.1139
+Ortho sim:	殃	yang1	Score: 60.7659	0.7782
+Phono sim:	翅	chi4	Score: 92.9412	1.7404
+Both diff:	腌	yan1	Score: 75.298	2.1818
+
+Critical:	碟	die2	Aggregate: 6.357446735421014	2.5944
+Both sim:	蝶	die2	Score: 78.2983	1.5051
+Ortho sim:	硬	ying4	Score: 52.7386	3.0414
+Phono sim:	别	bie2	Score: 89.9875	4.8443
+Both diff:	二	er4	Score: 75.0829	3.6857
+
+Critical:	绳	sheng2	Aggregate: 6.658376221262158	2.5587
+Both sim:	综	zeng4	Score: 70.6309	0.7782
+Ortho sim:	维	wei2	Score: 60.1147	3.1261
+Phono sim:	成	cheng2	Score: 96.5021	4.0983
+Both diff:	亚	ya4	Score: 75.7497	3.2865
+
+Critical:	情	qing2	Aggregate: 6.469844975950235	3.5927
+Both sim:	惊	jing1	Score: 71.6068	2.8228
+Ortho sim:	惟	wei2	Score: 62.9899	1.4472
+Phono sim:	氰	qing2	Score: 100.0	0.699
+Both diff:	业	ye4	Score: 79.0795	2.6599
+
+Critical:	掼	guan4	Aggregate: 7.037894415823466	0.699
+Both sim:	换	huan4	Score: 75.2438	3.8156
+Ortho sim:	揖	yi1	Score: 65.3455	0.301
+Phono sim:	幻	huan4	Score: 96.5444	2.4502
+Both diff:	瘀	yu1	Score: 85.9514	2.2788
+
+Critical:	咦	yi2	Aggregate: 7.2203627870493925	2.1614
+Both sim:	哦	e2	Score: 68.478	4.8412
+Ortho sim:	响	xiang3	Score: 75.4741	3.1477
+Phono sim:	夷	yi2	Score: 100.0	1.4472
+Both diff:	潢	huang2	Score: 85.5932	0.0
+
+Critical:	招	zhao1	Aggregate: 6.079907982624129	3.2274
+Both sim:	抬	tai2	Score: 81.7549	3.0212
+Ortho sim:	拥	yong1	Score: 55.9577	2.1206
+Phono sim:	剿	chao1	Score: 98.1336	0.7782
+Both diff:	引	yin3	Score: 76.5492	2.9547
+
+Critical:	溃	kui4	Aggregate: 6.92048979278162	1.4472
+Both sim:	匮	kui4	Score: 77.9679	0.4771
+Ortho sim:	湲	yuan2	Score: 62.7027	0.301
+Phono sim:	跪	gui4	Score: 98.1336	2.5159
+Both diff:	营	ying2	Score: 85.3813	2.7168
+
+Critical:	嗳	ai3	Aggregate: 6.3117806512912855	1.3802
+Both sim:	嗷	ao2	Score: 75.9418	2.4472
+Ortho sim:	嗵	tong1	Score: 59.1114	0.8451
+Phono sim:	乙	yi3	Score: 90.5598	2.0086
+Both diff:	胸	xiong1	Score: 90.5908	3.0133
+
+Critical:	倭	wo1	Aggregate: 6.307602502738559	0.7782
+Both sim:	偎	wei1	Score: 62.6902	0.699
+Ortho sim:	俸	feng4	Score: 64.5594	0.4771
+Phono sim:	危	wei1	Score: 90.6423	1.8573
+Both diff:	沆	hang4	Score: 79.8036	1.5315
+
+Critical:	音	yin1	Aggregate: 6.410271995137515	2.9025
+Both sim:	谙	an1	Score: 77.8695	0.9031
+Ortho sim:	鬼	gui3	Score: 55.3316	3.6235
+Phono sim:	吟	yin2	Score: 90.1671	1.9956
+Both diff:	跨	kua4	Score: 86.6989	2.4487
+
+Critical:	河	he2	Aggregate: 6.276558847600148	3.055
+Both sim:	沸	fei4	Score: 61.2397	0.7782
+Ortho sim:	泱	yang1	Score: 66.3491	0.301
+Phono sim:	颌	he2	Score: 94.7059	0.8451
+Both diff:	颖	ying3	Score: 71.0544	1.1139
+
+Critical:	湲	yuan2	Aggregate: 6.645015800675021	0.301
+Both sim:	温	wen1	Score: 70.5919	2.3802
+Ortho sim:	溃	kui4	Score: 62.7027	1.4472
+Phono sim:	园	yuan2	Score: 96.7087	2.2945
+Both diff:	砌	qi4	Score: 79.1029	1.5315
+
+Critical:	妆	zhuang1	Aggregate: 7.743502770183627	2.5527
+Both sim:	壮	zhuang4	Score: 77.0371	2.6149
+Ortho sim:	异	yi4	Score: 64.3275	2.8069
+Phono sim:	抢	qiang1	Score: 92.5134	3.3479
+Both diff:	谊	yi4	Score: 86.1842	0.301
+
+Critical:	滝	long2	Aggregate: 6.708876323780228	0.301
+Both sim:	澄	cheng2	Score: 65.6074	0.7782
+Ortho sim:	溢	yi4	Score: 65.931	1.7709
+Phono sim:	零	ling2	Score: 95.8266	2.7627
+Both diff:	崴	wai3	Score: 77.0932	1.4914
+
+Critical:	训	xun4	Aggregate: 6.842646337943643	2.2355
+Both sim:	讧	hong4	Score: 73.5532	0.0
+Ortho sim:	讹	e2	Score: 55.9795	0.6021
+Phono sim:	迅	xun4	Score: 92.9412	1.5315
+Both diff:	腰	yao1	Score: 76.2473	2.6928
+
+Critical:	诽	fei3	Aggregate: 5.190302652419142	0.6021
+Both sim:	非	fei1	Score: 77.2404	3.2896
+Ortho sim:	谙	an1	Score: 53.4165	0.9031
+Phono sim:	废	fei4	Score: 93.5099	2.5263
+Both diff:	円	yuan2	Score: 65.5206	1.9138
+
+Critical:	壬	ren2	Aggregate: 5.6753106780519245	1.1139
+Both sim:	升	sheng1	Score: 70.0694	2.9465
+Ortho sim:	夭	yao1	Score: 54.7955	1.0792
+Phono sim:	涔	cen2	Score: 92.0588	0.301
+Both diff:	拽	ye4	Score: 62.158	2.6314
+
+Critical:	捞	lao1	Aggregate: 6.271629101871688	2.4502
+Both sim:	掏	tao1	Score: 70.9622	2.4829
+Ortho sim:	挽	wan3	Score: 56.4148	1.7634
+Phono sim:	剿	chao1	Score: 94.3997	0.7782
+Both diff:	影	ying3	Score: 76.544	2.9243
+
+Critical:	浩	hao4	Aggregate: 7.344106879665284	1.9138
+Both sim:	沪	hu4	Score: 75.062	0.6021
+Ortho sim:	汪	wang1	Score: 60.5571	1.9445
+Phono sim:	郝	hao3	Score: 96.2673	1.6721
+Both diff:	瘟	wen1	Score: 77.0508	1.0792
+
+Critical:	哇	wa1	Aggregate: 6.2415968253028105	3.9979
+Both sim:	哟	yo1	Score: 65.9589	3.0338
+Ortho sim:	响	xiang3	Score: 59.9362	3.1477
+Phono sim:	挖	wa1	Score: 87.1895	3.2345
+Both diff:	郡	jun4	Score: 81.9794	2.871
+
+Critical:	荞	qiao2	Aggregate: 6.519515513581309	0.0
+Both sim:	茬	cha2	Score: 70.363	1.9031
+Ortho sim:	英	ying1	Score: 58.3201	2.6875
+Phono sim:	翘	qiao2	Score: 94.1176	2.7235
+Both diff:	婴	ying1	Score: 71.4133	1.9345
+
+Critical:	哧	chi1	Aggregate: 6.236211862064547	1.1461
+Both sim:	哩	li3	Score: 73.1787	2.5378
+Ortho sim:	唁	yan4	Score: 59.5449	0.0
+Phono sim:	之	zhi1	Score: 96.621	4.1988
+Both diff:	仰	yang3	Score: 82.0332	1.8808
+
+Critical:	荧	ying2	Aggregate: 6.230307078006777	1.0792
+Both sim:	莹	ying2	Score: 82.3529	0.301
+Ortho sim:	荤	hun1	Score: 57.581	1.2788
+Phono sim:	嬴	ying2	Score: 96.3235	1.0414
+Both diff:	筷	kuai4	Score: 91.1767	0.0
+
+Critical:	芥	gai4	Aggregate: 6.8449819688308615	1.6021
+Both sim:	芮	rui4	Score: 66.9513	2.0453
+Ortho sim:	英	ying1	Score: 63.5781	2.6875
+Phono sim:	太	tai4	Score: 90.9484	4.8139
+Both diff:	萤	ying2	Score: 79.5604	1.2788
+
+Critical:	蒸	zheng1	Aggregate: 6.77197471168974	1.9243
+Both sim:	葱	cong1	Score: 73.7174	1.9345
+Ortho sim:	蔚	yu4	Score: 58.3376	1.4314
+Phono sim:	成	cheng2	Score: 94.2878	4.0983
+Both diff:	阅	yue4	Score: 78.8315	1.1461
+
+Critical:	脐	qi2	Aggregate: 5.797076392773999	1.4771
+Both sim:	齐	qi2	Score: 90.7563	2.8615
+Ortho sim:	胺	an4	Score: 60.2248	2.1271
+Phono sim:	笈	ji2	Score: 95.5601	1.0414
+Both diff:	卍	wan4	Score: 74.6806	1.3222
+
+Critical:	拷	kao3	Aggregate: 5.825886449916394	2.0792
+Both sim:	挤	ji3	Score: 69.1914	2.9528
+Ortho sim:	拥	yong1	Score: 58.7282	2.1206
+Phono sim:	郝	hao3	Score: 97.1037	1.6721
+Both diff:	樱	ying1	Score: 70.0829	1.5441
+
+Critical:	慰	wei4	Aggregate: 6.486440391759542	2.2014
+Both sim:	熨	yu4	Score: 65.763	2.0086
+Ortho sim:	憨	han1	Score: 66.1998	1.0
+Phono sim:	位	wei4	Score: 90.2588	4.214
+Both diff:	沧	cang1	Score: 85.08	0.4771
+
+Critical:	铭	ming2	Aggregate: 5.855989717169392	0.9031
+Both sim:	酩	ming3	Score: 68.9953	1.7853
+Ortho sim:	铬	ge4	Score: 51.2227	1.3979
+Phono sim:	獴	meng3	Score: 91.0541	0.301
+Both diff:	澳	ao4	Score: 66.1844	1.9823
+
+Critical:	嗅	xiu4	Aggregate: 6.66576831354888	2.2014
+Both sim:	嗜	shi4	Score: 72.5459	2.2529
+Ortho sim:	嗡	weng1	Score: 62.3327	1.0
+Phono sim:	疚	jiu4	Score: 95.749	0.0
+Both diff:	氨	an1	Score: 70.1292	1.9138
+
+Critical:	钳	qian2	Aggregate: 6.516496180295099	2.0969
+Both sim:	铅	qian1	Score: 77.4438	2.2355
+Ortho sim:	铱	yi1	Score: 59.1758	0.6021
+Phono sim:	乾	qian2	Score: 99.615	1.7782
+Both diff:	伊	yi1	Score: 74.773	3.0282
+

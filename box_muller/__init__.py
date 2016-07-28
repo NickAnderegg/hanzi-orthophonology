@@ -14,12 +14,12 @@ def _get_random():
     }
     r = requests.get('https://www.random.org/integers/', params=randparams)
     resp = r.text.split('\n')
+    print('Got random numbers...')
     try:
         resp = [int(x) for x in resp[0:-1]]
         return resp
     except ValueError:
         print('Error retrieving numbers from random.org.')
-        return
 
 def box_muller(uniform=None, mean=0, std=1, lower_bound=None, upper_bound=None, integers=True):
     if uniform is None:

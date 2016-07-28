@@ -70,3 +70,8 @@ pyparserexp.py
 test.txt
 validchars.txt
 readcedict.py
+
+# Databases
+*.db
+character_comparisons.csv
+char_comparisons.csv
